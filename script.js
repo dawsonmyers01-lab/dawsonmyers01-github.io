@@ -1,5 +1,3 @@
-// Pro-feeling motion: drawer menu, smooth internal transitions, scroll reveal, progress bar, to-top button, smooth anchor scroll.
-
 (function () {
   const qs = (s) => document.querySelector(s);
   const qsa = (s) => Array.from(document.querySelectorAll(s));
@@ -8,9 +6,11 @@
   const scrim = qs("#scrim");
   const openBtn = qs("#openDrawer");
   const closeBtn = qs("#closeDrawer");
-  const transition = qs("#transition");
+  const warp = qs("#warp");
   const progressBar = qs("#progressBar");
   const toTop = qs("#toTop");
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Drawer menu
   const openDrawer = () => {
@@ -35,14 +35,42 @@
     if (e.key === "Escape") closeDrawer();
   });
 
+  // Assign ragdoll order (drop-in)
+  const drops = qsa(".drop");
+  drops.forEach((el, i) => el.style.setProperty("--i", i));
+
+  // Reveal on scroll + trigger ragdoll when revealed
+  const revealEls = qsa(".reveal");
+  const makeVisible = (el) => {
+    el.classList.add("in");
+    if (el.classList.contains("drop")) el.classList.add("in");
+  };
+
+  if (prefersReduced) {
+    revealEls.forEach(makeVisible);
+  } else {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            makeVisible(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.16 }
+    );
+    revealEls.forEach((el) => io.observe(el));
+  }
+
   // Smooth anchor scrolling
   const smoothScrollTo = (hash) => {
     const el = document.querySelector(hash);
     if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" });
   };
 
-  // Page transitions for internal links (no external links, no new tabs)
+  // Warp transition for internal page navigation
   const isInternal = (href) => {
     if (!href) return false;
     if (href.startsWith("http")) return false;
@@ -57,53 +85,32 @@
     const href = a.getAttribute("href");
     if (!href) return;
 
-    // Drawer links close the menu
+    // Close drawer when clicking inside it
     if (a.classList.contains("drawer-link") || a.classList.contains("drawer-post")) {
       closeDrawer();
     }
 
-    // Smooth scroll for in-page anchors
+    // In-page anchors
     if (href.startsWith("#")) {
       e.preventDefault();
       smoothScrollTo(href);
       return;
     }
 
-    // internal navigation with transition
+    // Internal navigation with warp
     if (isInternal(href)) {
-      // allow ctrl/cmd click
       if (a.target === "_blank" || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
 
       e.preventDefault();
-      if (transition) transition.classList.add("on");
 
-      setTimeout(() => {
+      if (!prefersReduced && warp) {
+        warp.classList.add("on");
+        setTimeout(() => (window.location.href = href), 420);
+      } else {
         window.location.href = href;
-      }, 200);
+      }
     }
   });
-
-  // Reveal on scroll (IntersectionObserver)
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!prefersReduced) {
-    const revealEls = qsa(".reveal");
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.14 }
-    );
-
-    revealEls.forEach((el) => io.observe(el));
-  } else {
-    qsa(".reveal").forEach((el) => el.classList.add("in"));
-  }
 
   // Scroll progress bar + to-top button
   const onScroll = () => {
@@ -115,7 +122,7 @@
     if (progressBar) progressBar.style.width = `${progress}%`;
 
     if (toTop) {
-      if (scrollTop > 500) toTop.classList.add("show");
+      if (scrollTop > 520) toTop.classList.add("show");
       else toTop.classList.remove("show");
     }
   };
@@ -126,7 +133,7 @@
   // Back to top
   if (toTop) {
     toTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
     });
   }
 })();
