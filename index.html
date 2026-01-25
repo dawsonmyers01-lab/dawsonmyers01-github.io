@@ -1,37 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="CAH 205 AI Newsletter by dawson myers — applied AI for studying and real-world productivity." />
   <title>create this but make it simple</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <h1>create this but make it simple</h1>
-    <p class="tagline">Covering applied AI for studying and real-world productivity</p>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a>
-    </nav>
+
+<body class="page">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">AI</div>
+        <div>
+          <h1 class="site-title">create this but make it simple</h1>
+          <p class="site-subtitle">Applied AI for studying and real-world productivity • by dawson myers</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="hero-card">
+        <p class="kicker">CAH 205 Newsletter</p>
+        <h2 class="hero-title">Study smarter. Build faster. Ship real stuff.</h2>
+        <p class="hero-text">
+          Each post is short, practical, and focused on things I can actually use: better study routines, better writing,
+          and better productivity workflows with AI.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#posts">Read latest posts</a>
+          <a class="btn btn-ghost" href="about.html">Meet the author</a>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="mini-card">
+          <h3 class="mini-title">The most important rule</h3>
+          <p class="mini-text">
+            Publishing a post takes <strong>two steps</strong>: create the post file, then add it to the homepage list.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3 class="mini-title">This week covered</h3>
+          <ul class="mini-list">
+            <li>GitHub setup + repository</li>
+            <li>AI as a coding partner</li>
+            <li>Building the newsletter files</li>
+            <li>Going live on GitHub Pages</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </header>
 
-  <main>
-    <!-- CRITICAL: The dashboard scraper looks for this exact structure -->
-    <ul class="post-list">
-      <li>
-        <a href="ai-study-prompts.html">AI study prompts that actually help</a>
-        <span class="date">January 25, 2026</span>
-      </li>
-      <li>
-        <a href="ai-productivity-workflow.html">A simple AI workflow for daily productivity</a>
-        <span class="date">January 24, 2026</span>
-      </li>
-    </ul>
+  <main id="main" class="main">
+    <section class="panel" id="posts">
+      <div class="panel-head">
+        <h2 class="panel-title">Latest posts</h2>
+        <p class="panel-subtitle">Newest posts go at the top. Dates must be “Month Day, Year”.</p>
+      </div>
+
+      <!-- REQUIRED STRUCTURE: ul.post-list with li/a/span.date -->
+      <ul class="post-list">
+        <li>
+          <a href="week-1-newsletter-launch.html">Week 1: Newsletter launch, GitHub Pages, and what I learned</a>
+          <span class="date">January 25, 2026</span>
+        </li>
+        <li>
+          <a href="ai-study-prompts-that-help.html">AI study prompts that actually help</a>
+          <span class="date">January 24, 2026</span>
+        </li>
+      </ul>
+
+      <div class="tip">
+        <h3 class="tip-title">Add a new post (no errors)</h3>
+        <ol class="tip-steps">
+          <li>Create the file: lowercase + hyphens + <code>.html</code>.</li>
+          <li>Add a new <code>&lt;li&gt;</code> at the <strong>top</strong> of the list above.</li>
+          <li>Make sure the <code>href</code> matches the filename exactly.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">Quick checklist</h2>
+      <ul class="checklist">
+        <li><span class="dot"></span> Repo name: <code>dawsonmyers01.github.io</code></li>
+        <li><span class="dot"></span> Pages: Settings → Pages → Deploy from branch → <code>main</code> / <code>(root)</code></li>
+        <li><span class="dot"></span> Your homepage file is exactly: <code>index.html</code></li>
+        <li><span class="dot"></span> Posts are linked from the <code>post-list</code></li>
+      </ul>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 dawson myers</p>
+  <footer class="footer">
+    <p>© <span id="year"></span> dawson myers • <span class="muted">CAH 205</span></p>
   </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
