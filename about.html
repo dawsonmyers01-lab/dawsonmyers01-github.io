@@ -3,23 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="About this CAH 205 AI newsletter by dawson myers." />
-  <title>About • create this but make it simple</title>
+  <meta name="description" content="About Dawson Myers and this CAH 205 AI newsletter." />
+  <title>About • Applied AI: Study + Productivity</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="page">
-  <header class="site-header">
-    <div class="topbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">AI</div>
+  <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="transition" id="transition" aria-hidden="true"></div>
+
+  <!-- Slide menu -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-top">
+      <div class="drawer-brand">
+        <div class="logo">AI</div>
         <div>
-          <h1 class="site-title">create this but make it simple</h1>
-          <p class="site-subtitle">Applied AI for studying and real-world productivity • by dawson myers</p>
+          <p class="drawer-title">Applied AI</p>
+          <p class="drawer-subtitle">Study + Productivity</p>
+        </div>
+      </div>
+      <button class="icon-btn" id="closeDrawer" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Site menu">
+      <a class="drawer-link" href="index.html">Home</a>
+      <a class="drawer-link" href="about.html">About</a>
+      <a class="drawer-link" href="index.html#posts">Posts</a>
+      <a class="drawer-link" href="index.html#publish">How to publish</a>
+      <a class="drawer-link" href="index.html#checklist">Launch checklist</a>
+    </nav>
+
+    <div class="drawer-section">
+      <p class="drawer-section-title">Latest posts</p>
+      <a class="drawer-post" href="week-1-going-live.html">Week 1: Going live on GitHub Pages</a>
+      <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
+    </div>
+
+    <div class="drawer-footer">
+      <p class="muted">GitHub: dawsonmyers01</p>
+      <p class="muted">Course: CAH 205</p>
+    </div>
+  </aside>
+
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="topbar reveal">
+      <button class="icon-btn" id="openDrawer" aria-label="Open menu">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+
+      <div class="brand">
+        <div class="logo">AI</div>
+        <div>
+          <h1 class="site-title">Applied AI: Study + Productivity</h1>
+          <p class="site-subtitle">CAH 205 newsletter • by Dawson Myers • GitHub: dawsonmyers01</p>
         </div>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Top navigation">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link active" href="about.html">About</a>
       </nav>
@@ -27,43 +69,46 @@
   </header>
 
   <main class="article">
-    <div class="article-card">
-      <div class="back-row">
-        <a class="back-link" href="index.html">← Back to posts</a>
-      </div>
+    <section class="article-card reveal">
+      <a class="back-link" href="index.html">← Back to posts</a>
 
-      <h2>About this newsletter</h2>
+      <h2 class="article-title">About this newsletter</h2>
       <p class="lead">
         This is my CAH 205 newsletter focused on applied AI: how to study better and how to be more productive in real life
-        using practical workflows.
+        with simple, repeatable workflows.
       </p>
 
-      <hr />
+      <div class="split reveal">
+        <div class="card mini">
+          <h3 class="card-title">What I will post</h3>
+          <ul class="list">
+            <li>Study prompts that build real understanding</li>
+            <li>Productivity workflows that save time</li>
+            <li>Short experiments and reflections</li>
+            <li>What worked, what failed, and what changed</li>
+          </ul>
+        </div>
 
-      <h2>What I post here</h2>
-      <p>
-        I keep things simple and useful: prompts that help with studying, ways to turn AI into a “work partner,” and small
-        systems for planning, writing, and finishing tasks.
-      </p>
+        <div class="card mini glow">
+          <h3 class="card-title">About me</h3>
+          <p><strong>Dawson Myers</strong></p>
+          <p class="muted">
+            Placeholder bio (edit later): I am a college student in CAH 205 exploring how AI can support learning,
+            planning, and real-world productivity. I like tools that feel simple, fast, and useful.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <hr />
-
-      <h2>About the author</h2>
-      <p class="lead"><strong>dawson myers</strong></p>
-      <p>
-        Placeholder bio (edit later): I am a college student in CAH 205 exploring how AI can support learning, planning,
-        and creative work. I like tools that feel simple, fast, and actually help me finish what I start.
-      </p>
-    </div>
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
   </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> dawson myers • <span class="muted">CAH 205</span></p>
+  <footer class="footer reveal">
+    <p class="footer-text">
+      Built for CAH 205 • <span class="muted">Dawson Myers</span>
+    </p>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
