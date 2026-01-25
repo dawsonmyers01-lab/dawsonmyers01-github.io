@@ -1,207 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="CAH 205 AI Newsletter by dawson myers" />
-    <title>dawsonmyers01-github.io | CAH 205 AI Newsletter</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>create this but make it simple</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>create this but make it simple</h1>
+    <p class="tagline">Covering applied AI for studying and real-world productivity</p>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a>
+    </nav>
+  </header>
 
-    <style>
-      :root {
-        --bg: #0b0f19;
-        --panel: #111827;
-        --text: #e5e7eb;
-        --muted: #9ca3af;
-        --line: rgba(255, 255, 255, 0.12);
-        --accent: #60a5fa;
-        --chip: rgba(96, 165, 250, 0.14);
-      }
+  <main>
+    <!-- CRITICAL: The dashboard scraper looks for this exact structure -->
+    <ul class="post-list">
+      <li>
+        <a href="ai-study-prompts.html">AI study prompts that actually help</a>
+        <span class="date">January 25, 2026</span>
+      </li>
+      <li>
+        <a href="ai-productivity-workflow.html">A simple AI workflow for daily productivity</a>
+        <span class="date">January 24, 2026</span>
+      </li>
+    </ul>
+  </main>
 
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        background: radial-gradient(1000px 700px at 10% 0%, rgba(96,165,250,0.18), transparent 55%),
-                    radial-gradient(900px 600px at 90% 10%, rgba(168,85,247,0.16), transparent 55%),
-                    var(--bg);
-        color: var(--text);
-        line-height: 1.55;
-      }
-
-      a { color: inherit; text-decoration: none; }
-      a:hover { text-decoration: underline; }
-
-      .container {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 28px 18px 60px;
-      }
-
-      header {
-        border: 1px solid var(--line);
-        background: rgba(17, 24, 39, 0.72);
-        backdrop-filter: blur(10px);
-        border-radius: 16px;
-        padding: 22px;
-      }
-
-      .title {
-        margin: 0 0 6px;
-        font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-        letter-spacing: 0.2px;
-      }
-
-      .subtitle {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .meta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 14px;
-      }
-
-      .chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 10px;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        background: var(--chip);
-        color: var(--text);
-        font-size: 0.92rem;
-      }
-
-      main {
-        margin-top: 18px;
-        display: grid;
-        grid-template-columns: 1.3fr 0.7fr;
-        gap: 16px;
-      }
-
-      @media (max-width: 860px) {
-        main { grid-template-columns: 1fr; }
-      }
-
-      .panel {
-        border: 1px solid var(--line);
-        background: rgba(17, 24, 39, 0.72);
-        backdrop-filter: blur(10px);
-        border-radius: 16px;
-        padding: 18px;
-      }
-
-      h2 {
-        margin: 0 0 10px;
-        font-size: 1.1rem;
-        letter-spacing: 0.2px;
-      }
-
-      p { margin: 0 0 12px; color: var(--text); }
-
-      .muted { color: var(--muted); }
-
-      /* REQUIRED: ul.post-list */
-      ul.post-list {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0 0;
-        display: grid;
-        gap: 10px;
-      }
-
-      ul.post-list li {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 12px 12px;
-        background: rgba(0, 0, 0, 0.15);
-      }
-
-      .post-title {
-        margin: 0;
-        font-weight: 650;
-      }
-
-      .post-meta {
-        margin: 6px 0 0;
-        font-size: 0.9rem;
-        color: var(--muted);
-      }
-
-      footer {
-        margin-top: 18px;
-        color: var(--muted);
-        text-align: center;
-        font-size: 0.95rem;
-      }
-
-      .note {
-        border-left: 3px solid var(--accent);
-        padding: 10px 12px;
-        border-radius: 10px;
-        background: rgba(96,165,250,0.08);
-      }
-
-      code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        font-size: 0.95em;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <header>
-        <h1 class="title">dawsonmyers01-github.io</h1>
-        <p class="subtitle">CAH 205 AI Newsletter • by dawson myers</p>
-
-        <div class="meta-row">
-          <span class="chip">Course: CAH 205</span>
-          <span class="chip">Topic: Artificial Intelligence</span>
-          <span class="chip">Format: Weekly posts</span>
-        </div>
-      </header>
-
-      <main>
-        <section class="panel" aria-labelledby="latest-posts">
-          <h2 id="latest-posts">Latest posts</h2>
-          <p class="muted">
-            New posts will appear here. Add more list items as you publish.
-          </p>
-
-          <!-- REQUIRED: ul element with class="post-list" -->
-          <ul class="post-list">
-            <li>
-              <p class="post-title">
-                <a href="posts/001-welcome.html">Welcome: What this newsletter covers</a>
-              </p>
-              <p class="post-meta">Posted: January 2026 • Tags: introduction, course overview</p>
-            </li>
-
-            <li>
-              <p class="post-title">
-                <a href="posts/002-ai-in-everyday-life.html">AI in everyday life: examples and tradeoffs</a>
-              </p>
-              <p class="post-meta">Posted: January 2026 • Tags: applications, ethics</p>
-            </li>
-
-            <li>
-              <p class="post-title">
-                <a href="posts/003-how-llms-work.html">How large language models work (plain-language version)</a>
-              </p>
-              <p class="post-meta">Posted: January 2026 • Tags: models, fundamentals</p>
-            </li>
-          </ul>
-
-          <div class="note" style="margin-top: 14px;">
-            <p style="margin: 0;">
-              Tip: Keep posts in a <code>posts/</code> folder and link them from this list.
-            </p>
-          </div>
-        </section>
-
-        <aside class="panel" aria-labelledby="about">
-          <h2
+  <footer>
+    <p>&copy; 2026 dawson myers</p>
+  </footer>
+</body>
+</html>
