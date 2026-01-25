@@ -4,22 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="About Dawson Myers and this CAH 205 AI newsletter." />
-  <title>About • Applied AI: Study + Productivity</title>
+  <title>About • AI Study + Productivity</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="page">
-  <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
-  <div class="transition" id="transition" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
 
-  <!-- Slide menu -->
+  <div class="warp" id="warp" aria-hidden="true"></div>
+
+  <div class="bubbles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-top">
       <div class="drawer-brand">
         <div class="logo">AI</div>
         <div>
-          <p class="drawer-title">Applied AI</p>
-          <p class="drawer-subtitle">Study + Productivity</p>
+          <p class="drawer-title">Menu</p>
+          <p class="drawer-subtitle">AI Study + Productivity</p>
         </div>
       </div>
       <button class="icon-btn" id="closeDrawer" aria-label="Close menu">✕</button>
@@ -29,8 +36,6 @@
       <a class="drawer-link" href="index.html">Home</a>
       <a class="drawer-link" href="about.html">About</a>
       <a class="drawer-link" href="index.html#posts">Posts</a>
-      <a class="drawer-link" href="index.html#publish">How to publish</a>
-      <a class="drawer-link" href="index.html#checklist">Launch checklist</a>
     </nav>
 
     <div class="drawer-section">
@@ -48,7 +53,7 @@
   <div class="scrim" id="scrim" aria-hidden="true"></div>
 
   <header class="site-header">
-    <div class="topbar reveal">
+    <div class="topbar drop reveal">
       <button class="icon-btn" id="openDrawer" aria-label="Open menu">
         <span class="burger" aria-hidden="true"></span>
       </button>
@@ -56,7 +61,7 @@
       <div class="brand">
         <div class="logo">AI</div>
         <div>
-          <h1 class="site-title">Applied AI: Study + Productivity</h1>
+          <h1 class="site-title">AI Study + Productivity</h1>
           <p class="site-subtitle">CAH 205 newsletter • by Dawson Myers • GitHub: dawsonmyers01</p>
         </div>
       </div>
@@ -69,18 +74,18 @@
   </header>
 
   <main class="article">
-    <section class="article-card reveal">
+    <section class="article-card drop reveal float">
       <a class="back-link" href="index.html">← Back to posts</a>
 
       <h2 class="article-title">About this newsletter</h2>
       <p class="lead">
-        This is my CAH 205 newsletter focused on applied AI: how to study better and how to be more productive in real life
-        with simple, repeatable workflows.
+        This is my CAH 205 newsletter focused on applied AI: how to study better and how to be more productive
+        in real life with simple, repeatable workflows.
       </p>
 
-      <div class="split reveal">
-        <div class="card mini">
-          <h3 class="card-title">What I will post</h3>
+      <div class="split">
+        <div class="card mini drop reveal float">
+          <h3 class="card-title">What I post</h3>
           <ul class="list">
             <li>Study prompts that build real understanding</li>
             <li>Productivity workflows that save time</li>
@@ -89,7 +94,7 @@
           </ul>
         </div>
 
-        <div class="card mini glow">
+        <div class="card mini glow drop reveal float">
           <h3 class="card-title">About me</h3>
           <p><strong>Dawson Myers</strong></p>
           <p class="muted">
@@ -104,9 +109,7 @@
   </main>
 
   <footer class="footer reveal">
-    <p class="footer-text">
-      Built for CAH 205 • <span class="muted">Dawson Myers</span>
-    </p>
+    <p class="footer-text muted">Dawson Myers • CAH 205</p>
   </footer>
 
   <script src="script.js"></script>
