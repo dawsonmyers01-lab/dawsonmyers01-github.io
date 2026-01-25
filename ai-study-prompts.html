@@ -4,22 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Study prompts that help you learn and remember, not just skim summaries." />
-  <title>AI study prompts that actually work • Applied AI: Study + Productivity</title>
+  <title>AI study prompts that actually work • AI Study + Productivity</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="page">
-  <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
-  <div class="transition" id="transition" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
 
-  <!-- Slide menu -->
+  <div class="warp" id="warp" aria-hidden="true"></div>
+
+  <div class="bubbles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-top">
       <div class="drawer-brand">
         <div class="logo">AI</div>
         <div>
-          <p class="drawer-title">Applied AI</p>
-          <p class="drawer-subtitle">Study + Productivity</p>
+          <p class="drawer-title">Menu</p>
+          <p class="drawer-subtitle">AI Study + Productivity</p>
         </div>
       </div>
       <button class="icon-btn" id="closeDrawer" aria-label="Close menu">✕</button>
@@ -29,8 +36,6 @@
       <a class="drawer-link" href="index.html">Home</a>
       <a class="drawer-link" href="about.html">About</a>
       <a class="drawer-link" href="index.html#posts">Posts</a>
-      <a class="drawer-link" href="index.html#publish">How to publish</a>
-      <a class="drawer-link" href="index.html#checklist">Launch checklist</a>
     </nav>
 
     <div class="drawer-section">
@@ -48,7 +53,7 @@
   <div class="scrim" id="scrim" aria-hidden="true"></div>
 
   <header class="site-header">
-    <div class="topbar reveal">
+    <div class="topbar drop reveal">
       <button class="icon-btn" id="openDrawer" aria-label="Open menu">
         <span class="burger" aria-hidden="true"></span>
       </button>
@@ -56,7 +61,7 @@
       <div class="brand">
         <div class="logo">AI</div>
         <div>
-          <h1 class="site-title">Applied AI: Study + Productivity</h1>
+          <h1 class="site-title">AI Study + Productivity</h1>
           <p class="site-subtitle">CAH 205 newsletter • by Dawson Myers • GitHub: dawsonmyers01</p>
         </div>
       </div>
@@ -69,7 +74,7 @@
   </header>
 
   <main class="article">
-    <article class="article-card reveal">
+    <article class="article-card drop reveal float">
       <a class="back-link" href="index.html">← Back to posts</a>
 
       <div class="article-head">
@@ -85,23 +90,23 @@
       <h3>Three prompts I am using</h3>
 
       <div class="callouts">
-        <div class="callout reveal">
-          <h4>1) Tutor mode (active recall)</h4>
+        <div class="callout drop reveal float">
+          <h4>1) Tutor mode</h4>
           <p>
             Prompt: “I am studying <em>[topic]</em>. Ask me 8 questions one at a time. After each answer, explain what I got
             right or wrong and why.”
           </p>
         </div>
 
-        <div class="callout reveal">
-          <h4>2) Make it harder (level up)</h4>
+        <div class="callout drop reveal float">
+          <h4>2) Make it harder</h4>
           <p>
             Prompt: “Give me a harder version of that question” or “Add a real-world scenario where this concept applies.”
           </p>
         </div>
 
-        <div class="callout reveal">
-          <h4>3) Diagnose weak spots (targeted review)</h4>
+        <div class="callout drop reveal float">
+          <h4>3) Diagnose weak spots</h4>
           <p>
             Prompt: “Based on my answers, list the top 3 concepts I should review and give me a 10-minute plan.”
           </p>
@@ -110,8 +115,8 @@
 
       <h3>Why this works</h3>
       <p>
-        This forces retrieval practice instead of passive reading. If I can answer questions and fix errors, I usually
-        remember the material longer.
+        This forces retrieval practice instead of passive reading. If I can answer questions and fix errors,
+        I usually remember the material longer.
       </p>
     </article>
 
@@ -119,9 +124,7 @@
   </main>
 
   <footer class="footer reveal">
-    <p class="footer-text">
-      Built for CAH 205 • <span class="muted">Dawson Myers</span>
-    </p>
+    <p class="footer-text muted">Dawson Myers • CAH 205</p>
   </footer>
 
   <script src="script.js"></script>
