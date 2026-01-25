@@ -1,0 +1,143 @@
+/* Simple, clean stylesheet for a CAH 205 AI newsletter */
+
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --link: #2563eb;
+  --panel: #f9fafb;
+  --radius: 12px;
+  --max-width: 920px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Layout helpers */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 28px 18px 60px;
+}
+
+header {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 18px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+p {
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Links */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Panels / sections */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+/* REQUIRED: post list styling */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.post-list li {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.post-list li:hover {
+  border-color: #d1d5db;
+}
+
+/* Optional helpers for post content inside each list item */
+.post-title {
+  margin: 0;
+  font-weight: 650;
+  font-size: 1.05rem;
+}
+
+.post-meta {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Images and media */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer */
+footer {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 2px;
+}
+
+/* Small screens */
+@media (max-width: 720px) {
+  .container {
+    padding: 22px 14px 48px;
+  }
+
+  .post-list li {
+    padding: 12px;
+  }
+}
