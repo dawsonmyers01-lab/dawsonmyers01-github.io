@@ -1,143 +1,105 @@
-/* Simple, clean stylesheet for a CAH 205 AI newsletter */
-
-:root {
-  --bg: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --link: #2563eb;
-  --panel: #f9fafb;
-  --radius: 12px;
-  --max-width: 920px;
-}
+/* Simple, clean CAH 205 newsletter styles */
 
 * {
-  box-sizing: border-box;
-}
-
-html,
-body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-/* Layout helpers */
-.container {
-  max-width: var(--max-width);
+  line-height: 1.7;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 28px 18px 60px;
+  padding: 22px 16px 60px;
+  background: #fafafa;
+  color: #222;
 }
 
 header {
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 18px;
+  border-bottom: 2px solid #222;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
 }
 
-h1,
-h2,
-h3 {
-  line-height: 1.25;
-  margin: 0 0 10px;
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
 }
 
-p {
-  margin: 0 0 12px;
-  color: var(--text);
+.tagline {
+  color: #555;
+  margin-bottom: 10px;
 }
 
-.muted {
-  color: var(--muted);
-}
-
-/* Links */
-a {
-  color: var(--link);
+nav a {
+  color: #0b5bd3;
   text-decoration: none;
 }
 
-a:hover,
-a:focus-visible {
+nav a:hover {
   text-decoration: underline;
 }
 
-/* Panels / sections */
-.panel {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px;
+main {
+  margin-top: 10px;
 }
 
-/* REQUIRED: post list styling */
+/* REQUIRED: Post list on index page */
 .post-list {
   list-style: none;
-  padding: 0;
-  margin: 14px 0 0;
-  display: grid;
-  gap: 10px;
+  margin-top: 10px;
 }
 
 .post-list li {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 12px 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.post-list li:hover {
-  border-color: #d1d5db;
+.post-list a {
+  font-size: 1.15rem;
+  color: #222;
+  text-decoration: none;
 }
 
-/* Optional helpers for post content inside each list item */
-.post-title {
-  margin: 0;
-  font-weight: 650;
-  font-size: 1.05rem;
+.post-list a:hover {
+  color: #0b5bd3;
 }
 
-.post-meta {
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-/* Images and media */
-img {
-  max-width: 100%;
-  height: auto;
+.post-list .date {
   display: block;
+  margin-top: 6px;
+  color: #666;
+  font-style: italic;
 }
 
-/* Footer */
+/* Individual post pages */
+article h2 {
+  margin-bottom: 6px;
+}
+
+article .date {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+article p {
+  margin-bottom: 1em;
+}
+
+blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 12px;
+  margin: 1.2em 0;
+  color: #444;
+  font-style: italic;
+}
+
 footer {
-  margin-top: 22px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #ccc;
+  color: #666;
   font-size: 0.95rem;
-}
-
-/* Accessibility */
-:focus-visible {
-  outline: 3px solid rgba(37, 99, 235, 0.35);
-  outline-offset: 2px;
-}
-
-/* Small screens */
-@media (max-width: 720px) {
-  .container {
-    padding: 22px 14px 48px;
-  }
-
-  .post-list li {
-    padding: 12px;
-  }
 }
