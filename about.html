@@ -1,38 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - create this but make it simple</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="About this CAH 205 AI newsletter by dawson myers." />
+  <title>About • create this but make it simple</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <h1>create this but make it simple</h1>
-    <p class="tagline">Covering applied AI for studying and real-world productivity</p>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a>
-    </nav>
+
+<body class="page">
+  <header class="site-header">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">AI</div>
+        <div>
+          <h1 class="site-title">create this but make it simple</h1>
+          <p class="site-subtitle">Applied AI for studying and real-world productivity • by dawson myers</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="about.html">About</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>About This Newsletter</h2>
-    <p>
-      This newsletter is for CAH 205. I share short posts about applied AI tools and habits that help with
-      studying and real-world productivity.
-    </p>
+  <main class="article">
+    <div class="article-card">
+      <div class="back-row">
+        <a class="back-link" href="index.html">← Back to posts</a>
+      </div>
 
-    <h2>About Me</h2>
-    <p><strong>dawson myers</strong></p>
-    <p>
-      Placeholder bio (edit later): I am a CAH 205 student exploring how AI can support learning, planning,
-      and getting work done. I am interested in simple workflows I can use every day.
-    </p>
+      <h2>About this newsletter</h2>
+      <p class="lead">
+        This is my CAH 205 newsletter focused on applied AI: how to study better and how to be more productive in real life
+        using practical workflows.
+      </p>
+
+      <hr />
+
+      <h2>What I post here</h2>
+      <p>
+        I keep things simple and useful: prompts that help with studying, ways to turn AI into a “work partner,” and small
+        systems for planning, writing, and finishing tasks.
+      </p>
+
+      <hr />
+
+      <h2>About the author</h2>
+      <p class="lead"><strong>dawson myers</strong></p>
+      <p>
+        Placeholder bio (edit later): I am a college student in CAH 205 exploring how AI can support learning, planning,
+        and creative work. I like tools that feel simple, fast, and actually help me finish what I start.
+      </p>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; 2026 dawson myers</p>
+  <footer class="footer">
+    <p>© <span id="year"></span> dawson myers • <span class="muted">CAH 205</span></p>
   </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
