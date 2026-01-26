@@ -13,7 +13,9 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="warp" id="warp" aria-hidden="true"></div>
+  <div class="warp-layer" id="warpLayer" aria-hidden="true">
+    <canvas class="warp-canvas" id="warpCanvas"></canvas>
+  </div>
 
   <div class="bubbles" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -39,14 +41,14 @@
     </nav>
 
     <div class="drawer-section">
-      <p class="drawer-section-title">Latest posts</p>
+      <p class="drawer-section-title">Posts</p>
       <a class="drawer-post" href="week-1-going-live.html">Week 1: Going live on GitHub Pages</a>
       <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
     </div>
 
     <div class="drawer-footer">
+      <p class="muted">Dawson Myers • CAH 205</p>
       <p class="muted">GitHub: dawsonmyers01</p>
-      <p class="muted">Course: CAH 205</p>
     </div>
   </aside>
 
@@ -74,58 +76,62 @@
   </header>
 
   <main class="article">
-    <article class="article-card drop reveal float">
-      <a class="back-link" href="index.html">← Back to posts</a>
+    <article class="article-card drop reveal">
+      <div class="float-inner">
+        <a class="back-link" href="index.html">← Back to posts</a>
 
-      <div class="article-head">
-        <h2 class="article-title">AI study prompts that actually work</h2>
-        <p class="date">January 24, 2026</p>
+        <div class="article-head">
+          <h2 class="article-title">AI study prompts that actually work</h2>
+          <p class="date">January 24, 2026</p>
+        </div>
+
+        <p class="lead">
+          Summaries feel productive, but they do not always stick. I get better results when AI helps me practice,
+          catch mistakes, and focus on weak spots.
+        </p>
+
+        <h3>Three prompts I am using</h3>
+
+        <div class="callouts">
+          <div class="callout drop reveal">
+            <div class="float-inner">
+              <h4>1) Tutor mode</h4>
+              <p>
+                Prompt: “I am studying <em>[topic]</em>. Ask me 8 questions one at a time. After each answer, explain what I got
+                right or wrong and why.”
+              </p>
+            </div>
+          </div>
+
+          <div class="callout drop reveal">
+            <div class="float-inner">
+              <h4>2) Make it harder</h4>
+              <p>
+                Prompt: “Give me a harder version of that question” or “Add a real-world scenario where this concept applies.”
+              </p>
+            </div>
+          </div>
+
+          <div class="callout drop reveal">
+            <div class="float-inner">
+              <h4>3) Diagnose weak spots</h4>
+              <p>
+                Prompt: “Based on my answers, list the top 3 concepts I should review and give me a 10-minute plan.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Why this works</h3>
+        <p>
+          This forces retrieval practice instead of passive reading. If I can answer questions and fix errors,
+          I usually remember the material longer.
+        </p>
       </div>
-
-      <p class="lead">
-        Summaries feel productive, but they do not always stick. I get better results when AI helps me practice,
-        catch mistakes, and focus on weak spots.
-      </p>
-
-      <h3>Three prompts I am using</h3>
-
-      <div class="callouts">
-        <div class="callout drop reveal float">
-          <h4>1) Tutor mode</h4>
-          <p>
-            Prompt: “I am studying <em>[topic]</em>. Ask me 8 questions one at a time. After each answer, explain what I got
-            right or wrong and why.”
-          </p>
-        </div>
-
-        <div class="callout drop reveal float">
-          <h4>2) Make it harder</h4>
-          <p>
-            Prompt: “Give me a harder version of that question” or “Add a real-world scenario where this concept applies.”
-          </p>
-        </div>
-
-        <div class="callout drop reveal float">
-          <h4>3) Diagnose weak spots</h4>
-          <p>
-            Prompt: “Based on my answers, list the top 3 concepts I should review and give me a 10-minute plan.”
-          </p>
-        </div>
-      </div>
-
-      <h3>Why this works</h3>
-      <p>
-        This forces retrieval practice instead of passive reading. If I can answer questions and fix errors,
-        I usually remember the material longer.
-      </p>
     </article>
 
     <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
   </main>
-
-  <footer class="footer reveal">
-    <p class="footer-text muted">Dawson Myers • CAH 205</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
