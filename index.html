@@ -13,8 +13,10 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <!-- Warp (tunnel) transition overlay -->
-  <div class="warp" id="warp" aria-hidden="true"></div>
+  <!-- Hyperspace warp transition layer -->
+  <div class="warp-layer" id="warpLayer" aria-hidden="true">
+    <canvas class="warp-canvas" id="warpCanvas"></canvas>
+  </div>
 
   <!-- Floating bubbles background -->
   <div class="bubbles" aria-hidden="true">
@@ -42,14 +44,14 @@
     </nav>
 
     <div class="drawer-section">
-      <p class="drawer-section-title">Latest posts</p>
+      <p class="drawer-section-title">Posts</p>
       <a class="drawer-post" href="week-1-going-live.html">Week 1: Going live on GitHub Pages</a>
       <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
     </div>
 
     <div class="drawer-footer">
+      <p class="muted">Dawson Myers • CAH 205</p>
       <p class="muted">GitHub: dawsonmyers01</p>
-      <p class="muted">Course: CAH 205</p>
     </div>
   </aside>
 
@@ -76,31 +78,35 @@
     </div>
 
     <section class="hero">
-      <div class="hero-card drop reveal float">
-        <h2 class="hero-title">Practical AI you can actually use.</h2>
-        <p class="hero-text">
-          Applied AI for studying and real-world productivity: better prompts, better workflows,
-          and better results without making things complicated.
-        </p>
+      <div class="hero-card drop reveal">
+        <div class="float-inner">
+          <h2 class="hero-title">Practical AI you can actually use.</h2>
+          <p class="hero-text">
+            Applied AI for studying and real-world productivity: better prompts, better workflows,
+            and better results without making things complicated.
+          </p>
 
-        <div class="hero-actions">
-          <a class="btn" href="#posts">Read posts</a>
-          <a class="btn ghost" href="about.html">About me</a>
+          <div class="hero-actions">
+            <a class="btn" href="#posts">Read posts</a>
+            <a class="btn ghost" href="about.html">About me</a>
+          </div>
         </div>
       </div>
 
       <div class="hero-side">
-        <div class="card drop reveal float">
-          <h3 class="card-title">This week covered</h3>
-          <ul class="list">
-            <li>Getting started with GitHub (account + repository)</li>
-            <li>AI as your coding partner (how to prompt for builds)</li>
-            <li>Building your newsletter (files + week 1 posts)</li>
-            <li>Going live (GitHub Pages setup + verification)</li>
-            <li>Activity: newsletter setup checklist</li>
-            <li>Assignment: newsletter launch</li>
-            <li>Discussion: share your newsletter</li>
-          </ul>
+        <div class="card drop reveal">
+          <div class="float-inner">
+            <h3 class="card-title">This week covered</h3>
+            <ul class="list list-fancy">
+              <li>Getting started with GitHub (account + repository)</li>
+              <li>AI as your coding partner (how to prompt for builds)</li>
+              <li>Building your newsletter (files + week 1 posts)</li>
+              <li>Going live (GitHub Pages setup + verification)</li>
+              <li>Activity: newsletter setup checklist</li>
+              <li>Assignment: newsletter launch</li>
+              <li>Discussion: share your newsletter</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -115,24 +121,24 @@
 
       <!-- REQUIRED STRUCTURE -->
       <ul class="post-list">
-        <li class="post-item drop reveal float">
-          <a href="week-1-going-live.html">Week 1: Going live on GitHub Pages</a>
-          <span class="date">January 25, 2026</span>
+        <li class="post-item drop reveal">
+          <div class="float-inner">
+            <a href="week-1-going-live.html">Week 1: Going live on GitHub Pages</a>
+            <span class="date">January 25, 2026</span>
+          </div>
         </li>
 
-        <li class="post-item drop reveal float">
-          <a href="ai-study-prompts.html">AI study prompts that actually work</a>
-          <span class="date">January 24, 2026</span>
+        <li class="post-item drop reveal">
+          <div class="float-inner">
+            <a href="ai-study-prompts.html">AI study prompts that actually work</a>
+            <span class="date">January 24, 2026</span>
+          </div>
         </li>
       </ul>
     </section>
 
     <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
   </main>
-
-  <footer class="footer reveal">
-    <p class="footer-text muted">Dawson Myers • CAH 205</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
