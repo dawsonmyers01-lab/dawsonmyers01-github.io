@@ -13,7 +13,9 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="warp" id="warp" aria-hidden="true"></div>
+  <div class="warp-layer" id="warpLayer" aria-hidden="true">
+    <canvas class="warp-canvas" id="warpCanvas"></canvas>
+  </div>
 
   <div class="bubbles" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -39,14 +41,14 @@
     </nav>
 
     <div class="drawer-section">
-      <p class="drawer-section-title">Latest posts</p>
+      <p class="drawer-section-title">Posts</p>
       <a class="drawer-post" href="week-1-going-live.html">Week 1: Going live on GitHub Pages</a>
       <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
     </div>
 
     <div class="drawer-footer">
+      <p class="muted">Dawson Myers • CAH 205</p>
       <p class="muted">GitHub: dawsonmyers01</p>
-      <p class="muted">Course: CAH 205</p>
     </div>
   </aside>
 
@@ -74,43 +76,45 @@
   </header>
 
   <main class="article">
-    <section class="article-card drop reveal float">
-      <a class="back-link" href="index.html">← Back to posts</a>
+    <section class="article-card drop reveal">
+      <div class="float-inner">
+        <a class="back-link" href="index.html">← Back to posts</a>
 
-      <h2 class="article-title">About this newsletter</h2>
-      <p class="lead">
-        This is my CAH 205 newsletter focused on applied AI: how to study better and how to be more productive
-        in real life with simple, repeatable workflows.
-      </p>
+        <h2 class="article-title">About this newsletter</h2>
+        <p class="lead">
+          This is my CAH 205 newsletter focused on applied AI: how to study better and how to be more productive
+          in real life with simple, repeatable workflows.
+        </p>
 
-      <div class="split">
-        <div class="card mini drop reveal float">
-          <h3 class="card-title">What I post</h3>
-          <ul class="list">
-            <li>Study prompts that build real understanding</li>
-            <li>Productivity workflows that save time</li>
-            <li>Short experiments and reflections</li>
-            <li>What worked, what failed, and what changed</li>
-          </ul>
-        </div>
+        <div class="split">
+          <div class="card mini drop reveal">
+            <div class="float-inner">
+              <h3 class="card-title">What I post</h3>
+              <ul class="list list-fancy">
+                <li>Study prompts that build real understanding</li>
+                <li>Productivity workflows that save time</li>
+                <li>Short experiments and reflections</li>
+                <li>What worked, what failed, and what changed</li>
+              </ul>
+            </div>
+          </div>
 
-        <div class="card mini glow drop reveal float">
-          <h3 class="card-title">About me</h3>
-          <p><strong>Dawson Myers</strong></p>
-          <p class="muted">
-            Placeholder bio (edit later): I am a college student in CAH 205 exploring how AI can support learning,
-            planning, and real-world productivity. I like tools that feel simple, fast, and useful.
-          </p>
+          <div class="card mini glow drop reveal">
+            <div class="float-inner">
+              <h3 class="card-title">About me</h3>
+              <p><strong>Dawson Myers</strong></p>
+              <p class="muted">
+                Placeholder bio (edit later): I am a college student in CAH 205 exploring how AI can support learning,
+                planning, and real-world productivity. I like tools that feel simple, fast, and useful.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
   </main>
-
-  <footer class="footer reveal">
-    <p class="footer-text muted">Dawson Myers • CAH 205</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
