@@ -13,7 +13,9 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="warp" id="warp" aria-hidden="true"></div>
+  <div class="warp-layer" id="warpLayer" aria-hidden="true">
+    <canvas class="warp-canvas" id="warpCanvas"></canvas>
+  </div>
 
   <div class="bubbles" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -39,14 +41,14 @@
     </nav>
 
     <div class="drawer-section">
-      <p class="drawer-section-title">Latest posts</p>
+      <p class="drawer-section-title">Posts</p>
       <a class="drawer-post" href="week-1-going-live.html">Week 1: Going live on GitHub Pages</a>
       <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
     </div>
 
     <div class="drawer-footer">
+      <p class="muted">Dawson Myers • CAH 205</p>
       <p class="muted">GitHub: dawsonmyers01</p>
-      <p class="muted">Course: CAH 205</p>
     </div>
   </aside>
 
@@ -74,40 +76,38 @@
   </header>
 
   <main class="article">
-    <article class="article-card drop reveal float">
-      <a class="back-link" href="index.html">← Back to posts</a>
+    <article class="article-card drop reveal">
+      <div class="float-inner">
+        <a class="back-link" href="index.html">← Back to posts</a>
 
-      <div class="article-head">
-        <h2 class="article-title">Week 1: Going live on GitHub Pages</h2>
-        <p class="date">January 25, 2026</p>
+        <div class="article-head">
+          <h2 class="article-title">Week 1: Going live on GitHub Pages</h2>
+          <p class="date">January 25, 2026</p>
+        </div>
+
+        <p class="lead">
+          This week was about building the foundation and shipping it live: setting up GitHub, using AI as a coding partner,
+          creating the newsletter files, and deploying to GitHub Pages.
+        </p>
+
+        <h3>What we covered</h3>
+        <ul class="list list-fancy">
+          <li>Getting started with GitHub (account + repository)</li>
+          <li>AI as a coding partner (asking for specific files and requirements)</li>
+          <li>Building the newsletter (pages, styling, and posts)</li>
+          <li>Going live (Pages settings + verifying links)</li>
+        </ul>
+
+        <h3>What I will improve next</h3>
+        <p>
+          I want to keep posts practical and short, and focus on repeatable workflows: study prompts, planning templates,
+          and “AI as a helper” systems that actually save time.
+        </p>
       </div>
-
-      <p class="lead">
-        This week was about building the foundation and shipping it live: setting up GitHub, using AI as a coding partner,
-        creating the newsletter files, and deploying to GitHub Pages.
-      </p>
-
-      <h3>What we covered</h3>
-      <ul class="list">
-        <li>Getting started with GitHub (account + repository)</li>
-        <li>AI as a coding partner (asking for specific files and requirements)</li>
-        <li>Building the newsletter (pages, styling, and posts)</li>
-        <li>Going live (Pages settings + verifying links)</li>
-      </ul>
-
-      <h3>What I will improve next</h3>
-      <p>
-        I want to keep posts practical and short, and focus on repeatable workflows: study prompts, planning templates,
-        and “AI as a helper” systems that actually save time.
-      </p>
     </article>
 
     <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
   </main>
-
-  <footer class="footer reveal">
-    <p class="footer-text muted">Dawson Myers • CAH 205</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
