@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Abstract dark themed banner for AI study and productivity with tan and teal accents">
+  <defs>
+    <radialGradient id="g1" cx="25%" cy="10%" r="75%">
+      <stop offset="0" stop-color="#d1b38b" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0b0c0e" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="80%" cy="20%" r="70%">
+      <stop offset="0" stop-color="#39d6c7" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#0b0c0e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d1b38b" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#39d6c7" stop-opacity="0.7"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0b0c0e"/>
+  <rect width="1600" height="900" fill="url(#g1)"/>
+  <rect width="1600" height="900" fill="url(#g2)"/>
+
+  <!-- subtle grid -->
+  <g opacity="0.10">
+    <path d="M0 640 H1600" stroke="#ffffff" stroke-width="1"/>
+    <path d="M0 520 H1600" stroke="#ffffff" stroke-width="1"/>
+    <path d="M0 400 H1600" stroke="#ffffff" stroke-width="1"/>
+    <path d="M260 0 V900" stroke="#ffffff" stroke-width="1"/>
+    <path d="M520 0 V900" stroke="#ffffff" stroke-width="1"/>
+    <path d="M780 0 V900" stroke="#ffffff" stroke-width="1"/>
+    <path d="M1040 0 V900" stroke="#ffffff" stroke-width="1"/>
+    <path d="M1300 0 V900" stroke="#ffffff" stroke-width="1"/>
+  </g>
+
+  <!-- notebook silhouette -->
+  <g filter="url(#soft)">
+    <rect x="235" y="250" rx="28" ry="28" width="420" height="520" fill="#101216" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+    <rect x="270" y="300" rx="18" ry="18" width="350" height="420" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" stroke-width="2"/>
+    <path d="M308 360 H582" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+    <path d="M308 410 H582" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+    <path d="M308 460 H560" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+    <circle cx="260" cy="310" r="6" fill="#d1b38b" opacity="0.75"/>
+    <circle cx="260" cy="340" r="6" fill="#39d6c7" opacity="0.65"/>
+    <circle cx="260" cy="370" r="6" fill="#d1b38b" opacity="0.55"/>
+  </g>
+
+  <!-- AI node network -->
+  <g opacity="0.95">
+    <path d="M940 220 C1080 150 1220 170 1360 260" stroke="url(#lineGlow)" stroke-width="3" fill="none" opacity="0.85"/>
+    <path d="M930 340 C1070 250 1210 270 1360 360" stroke="url(#lineGlow)" stroke-width="2.5" fill="none" opacity="0.55"/>
+    <path d="M900 520 C1060 450 1220 470 1410 600" stroke="url(#lineGlow)" stroke-width="3" fill="none" opacity="0.75"/>
+    <path d="M1020 660 C1120 600 1260 600 1420 680" stroke="rgba(57,214,199,0.65)" stroke-width="2" fill="none" opacity="0.55"/>
+
+    <g filter="url(#soft)">
+      <circle cx="940" cy="220" r="10" fill="#d1b38b" opacity="0.9"/>
+      <circle cx="1120" cy="175" r="8" fill="#39d6c7" opacity="0.85"/>
+      <circle cx="1245" cy="205" r="7" fill="#d1b38b" opacity="0.75"/>
+      <circle cx="1360" cy="260" r="10" fill="#39d6c7" opacity="0.9"/>
+
+      <circle cx="930" cy="340" r="8" fill="#d1b38b" opacity="0.75"/>
+      <circle cx="1100" cy="285" r="7" fill="#39d6c7" opacity="0.7"/>
+      <circle cx="1240" cy="310" r="7" fill="#d1b38b" opacity="0.6"/>
+      <circle cx="1360" cy="360" r="9" fill="#39d6c7" opacity="0.85"/>
+
+      <circle cx="900" cy="520" r="9" fill="#d1b38b" opacity="0.78"/>
+      <circle cx="1080" cy="470" r="7" fill="#39d6c7" opacity="0.7"/>
+      <circle cx="1235" cy="505" r="8" fill="#d1b38b" opacity="0.62"/>
+      <circle cx="1410" cy="600" r="11" fill="#39d6c7" opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- abstract bubbles -->
+  <g opacity="0.55">
+    <circle cx="820" cy="120" r="90" fill="rgba(209,179,139,0.08)"/>
+    <circle cx="1460" cy="120" r="130" fill="rgba(57,214,199,0.07)"/>
+    <circle cx="1490" cy="780" r="150" fill="rgba(209,179,139,0.06)"/>
+    <circle cx="820" cy="780" r="110" fill="rgba(57,214,199,0.05)"/>
+  </g>
+
+  <!-- subtle accent line -->
+  <path d="M720 740 C900 640 1120 650 1470 720" stroke="rgba(209,179,139,0.35)" stroke-width="2" fill="none"/>
+</svg>

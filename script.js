@@ -89,7 +89,6 @@
 
     document.body.classList.add("is-transitioning");
 
-    // Ensure transition triggers reliably
     requestAnimationFrame(() => {
       warpLayer.classList.add("on");
       setTimeout(() => {
