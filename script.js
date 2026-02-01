@@ -1,4 +1,6 @@
 (function () {
+  window.__DM_SITE_READY__ = true;
+
   const qs = (s) => document.querySelector(s);
   const qsa = (s) => Array.from(document.querySelectorAll(s));
 
@@ -10,10 +12,7 @@
   const progressBar = qs("#progressBar");
   const toTop = qs("#toTop");
 
-  // Transition overlay element in your HTML:
-  // <div class="warp-layer" id="warpLayer"><canvas id="warpCanvas"></canvas></div>
   const warpLayer = qs("#warpLayer");
-
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Drawer controls
@@ -74,11 +73,8 @@
     el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" });
   };
 
-  // =========================================================
-  // FULL-SCREEN SLIDE + FADE TRANSITION (CLEAN + PRO)
-  // =========================================================
+  // Slide + fade transition overlay
   let transitioning = false;
-
   const startTransition = (onDone) => {
     if (prefersReduced || !warpLayer) {
       onDone();
@@ -91,14 +87,10 @@
 
     requestAnimationFrame(() => {
       warpLayer.classList.add("on");
-      setTimeout(() => {
-        onDone();
-      }, 260);
+      setTimeout(() => onDone(), 260);
     });
   };
 
-  // If browser restores page from bfcache (back/forward),
-  // remove overlay so it never gets stuck.
   window.addEventListener("pageshow", () => {
     if (warpLayer) warpLayer.classList.remove("on");
     document.body.classList.remove("is-transitioning");
@@ -120,27 +112,20 @@
     const href = a.getAttribute("href");
     if (!href) return;
 
-    // Close drawer for its links
     if (a.classList.contains("drawer-link") || a.classList.contains("drawer-post")) {
       closeDrawer();
     }
 
-    // In-page anchors
     if (href.startsWith("#")) {
       e.preventDefault();
       smoothScrollTo(href);
       return;
     }
 
-    // Internal navigation with transition
     if (isInternal(href)) {
-      // allow ctrl/cmd/shift clicks or target blank
       if (a.target === "_blank" || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-
       e.preventDefault();
-      startTransition(() => {
-        window.location.href = href;
-      });
+      startTransition(() => (window.location.href = href));
     }
   });
 
@@ -162,7 +147,6 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // Back to top
   if (toTop) {
     toTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
