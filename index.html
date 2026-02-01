@@ -6,10 +6,7 @@
   <meta name="description" content="CAH 205 AI Newsletter by Dawson Myers — applied AI for studying and real-world productivity." />
   <title>AI Study + Productivity</title>
 
-  <!-- Primary CSS (root) -->
   <link id="mainCss" rel="stylesheet" href="style.css" />
-
-  <!-- Fallback loader: if root CSS fails, load /css/style.css -->
   <script>
     (function () {
       const link = document.getElementById("mainCss");
@@ -19,17 +16,10 @@
         fallback.href = "css/style.css";
         document.head.appendChild(fallback);
       }
-      // If the link errors, load fallback
       link.addEventListener("error", loadFallbackCss);
-
-      // Extra safety: probe the CSS after a moment
       setTimeout(() => {
-        try {
-          // If no stylesheets actually loaded, try fallback
-          if (!document.styleSheets || document.styleSheets.length === 0) loadFallbackCss();
-        } catch (e) {
-          loadFallbackCss();
-        }
+        try { if (!document.styleSheets || document.styleSheets.length === 0) loadFallbackCss(); }
+        catch (e) { loadFallbackCss(); }
       }, 500);
     })();
   </script>
@@ -113,8 +103,9 @@
 
           <figure class="visual hero-figure compact">
             <img
-              src="images/ai-study-banner.webp"
+              src="./images/ai-study-banner.png"
               alt="Abstract dark-themed banner illustration showing AI and studying concepts with tan and teal glow accents."
+              loading="eager"
             />
           </figure>
 
@@ -175,14 +166,9 @@
     <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
   </main>
 
-  <!-- Primary JS (root) -->
   <script src="script.js"></script>
-
-  <!-- Fallback JS loader: if root JS missing, load /js/script.js -->
   <script>
     (function () {
-      // If your JS didn't attach (menu doesn't work), try fallback.
-      // We detect by checking a global flag that script.js sets.
       setTimeout(() => {
         if (!window.__DM_SITE_READY__) {
           const s = document.createElement("script");
