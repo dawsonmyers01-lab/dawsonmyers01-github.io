@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="A visual AI study workflow using retrieval practice and spaced review, with AI-generated images." />
+  <title>Visual Guide: AI Study Workflow • AI Study + Productivity</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page">
+  <div class="progress" aria-hidden="true">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="warp-layer" id="warpLayer" aria-hidden="true">
+    <canvas class="warp-canvas" id="warpCanvas"></canvas>
+  </div>
+
+  <div class="bubbles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-top">
+      <div class="drawer-brand">
+        <div class="logo">AI</div>
+        <div>
+          <p class="drawer-title">Menu</p>
+          <p class="drawer-subtitle">AI Study + Productivity</p>
+        </div>
+      </div>
+      <button class="icon-btn" id="closeDrawer" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Site menu">
+      <a class="drawer-link" href="index.html">Home</a>
+      <a class="drawer-link" href="about.html">About</a>
+      <a class="drawer-link" href="index.html#posts">Posts</a>
+    </nav>
+
+    <div class="drawer-section">
+      <p class="drawer-section-title">Posts</p>
+      <a class="drawer-post" href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
+      <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
+      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
+    </div>
+
+    <div class="drawer-footer">
+      <p class="muted">Dawson Myers • CAH 205</p>
+      <p class="muted">GitHub: dawsonmyers01</p>
+    </div>
+  </aside>
+
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="topbar drop reveal">
+      <button class="icon-btn" id="openDrawer" aria-label="Open menu">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+
+      <div class="brand">
+        <div class="logo">AI</div>
+        <div>
+          <h1 class="site-title">AI Study + Productivity</h1>
+          <p class="site-subtitle">CAH 205 newsletter • by Dawson Myers • GitHub: dawsonmyers01</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Top navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article">
+    <article class="article-card drop reveal">
+      <div class="float-inner">
+        <a class="back-link" href="index.html">← Back to posts</a>
+
+        <div class="article-head">
+          <h2 class="article-title">Visual Guide: AI Study Workflow</h2>
+          <p class="date">February 1, 2026</p>
+        </div>
+
+        <figure class="visual hero-figure">
+          <img
+            src="images/ai-study-banner.webp"
+            alt="Abstract dark-themed banner illustration showing AI and studying concepts with tan and teal glow accents."
+          />
+          <figcaption>AI-generated header image to set the tone for a study + productivity workflow.</figcaption>
+        </figure>
+
+        <p class="lead">
+          My topic is applied AI for studying and real-world productivity. This week I wanted to make the workflow
+          feel visual and practical instead of “just talking about prompts.” The goal is simple: use AI like a tutor
+          to force real learning, then use AI like a planner to keep you consistent.
+        </p>
+
+        <h3>The core idea</h3>
+        <p>
+          If AI only summarizes, you get a false sense of progress. I get better results when AI does three things:
+          <strong>asks me questions</strong>, <strong>corrects me</strong>, and <strong>helps me schedule review</strong>.
+          That keeps studying active instead of passive.
+        </p>
+
+        <h3>Step 1: Retrieval practice loop (AI as tutor)</h3>
+        <figure class="visual">
+          <img
+            src="images/retrieval-practice-loop.webp"
+            alt="Concept illustration of a retrieval practice loop with question, thinking, feedback, and repeat cycle, in a dark theme with tan and teal accents."
+            loading="lazy"
+          />
+          <figcaption>This visual matches the workflow: question → attempt → feedback → repeat.</figcaption>
+        </figure>
+
+        <p>
+          I run a fast “tutor loop” where AI asks questions one at a time and gives feedback after each answer.
+          The point is not to feel smart, it is to expose what I do not know while I still have time to fix it.
+        </p>
+
+        <div class="callouts">
+          <div class="callout drop reveal">
+            <div class="float-inner">
+              <h4>Tutor Mode prompt</h4>
+              <p>
+                <code>Quiz me on [topic]. Ask 10 questions one at a time. After each answer, tell me what I got right/wrong and why. Increase difficulty if I do well.</code>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Step 2: Spaced review schedule (AI as planner)</h3>
+        <figure class="visual">
+          <img
+            src="images/spaced-review-calendar.webp"
+            alt="Concept illustration of a spaced review calendar with short study sessions highlighted, in a dark modern UI style with tan and teal accents."
+            loading="lazy"
+          />
+          <figcaption>Spacing turns “I will study later” into an actual plan you follow.</figcaption>
+        </figure>
+
+        <p>
+          After the tutor loop, I ask AI to create a simple review plan across the next week so I do not cram.
+          I keep it short (10 to 20 minutes) so I actually do it.
+        </p>
+
+        <div class="callouts">
+          <div class="callout drop reveal">
+            <div class="float-inner">
+              <h4>Spacing plan prompt</h4>
+              <p>
+                <code>Create a spaced review plan for the next 7 days (10–20 minutes/day). Tell me exactly what to review each day and include 3 retrieval questions daily.</code>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Image iteration evidence (what I changed)</h3>
+        <p class="muted">
+          I did not keep the first image generation. I refined prompts to reduce clutter, increase negative space,
+          and keep the color palette consistent (dark + tan + teal) so the visuals match the site and actually support the content.
+        </p>
+
+        <h3>Why this fits my newsletter topic</h3>
+        <p>
+          This is applied AI: not theory, not hype, just a workflow I can run every week. The visuals make it easier
+          for a reader to understand the system quickly: a tutor loop for learning, plus spaced planning for consistency.
+        </p>
+      </div>
+    </article>
+
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
