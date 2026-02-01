@@ -5,7 +5,34 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="CAH 205 AI Newsletter by Dawson Myers — applied AI for studying and real-world productivity." />
   <title>AI Study + Productivity</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Primary CSS (root) -->
+  <link id="mainCss" rel="stylesheet" href="style.css" />
+
+  <!-- Fallback loader: if root CSS fails, load /css/style.css -->
+  <script>
+    (function () {
+      const link = document.getElementById("mainCss");
+      function loadFallbackCss() {
+        const fallback = document.createElement("link");
+        fallback.rel = "stylesheet";
+        fallback.href = "css/style.css";
+        document.head.appendChild(fallback);
+      }
+      // If the link errors, load fallback
+      link.addEventListener("error", loadFallbackCss);
+
+      // Extra safety: probe the CSS after a moment
+      setTimeout(() => {
+        try {
+          // If no stylesheets actually loaded, try fallback
+          if (!document.styleSheets || document.styleSheets.length === 0) loadFallbackCss();
+        } catch (e) {
+          loadFallbackCss();
+        }
+      }, 500);
+    })();
+  </script>
 </head>
 
 <body class="page">
@@ -37,14 +64,14 @@
     <nav class="drawer-nav" aria-label="Site menu">
       <a class="drawer-link" href="index.html">Home</a>
       <a class="drawer-link" href="about.html">About</a>
-      <a class="drawer-link" href="index.html#posts">Posts</a>
+      <a class="drawer-link" href="#posts">Posts</a>
     </nav>
 
     <div class="drawer-section">
       <p class="drawer-section-title">Posts</p>
       <a class="drawer-post" href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
-      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
       <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
+      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
     </div>
 
     <div class="drawer-footer">
@@ -85,7 +112,10 @@
           </p>
 
           <figure class="visual hero-figure compact">
-            <img src="images/ai-study-banner.svg" alt="Abstract dark themed banner for AI study and productivity with tan and teal accents." />
+            <img
+              src="images/ai-study-banner.webp"
+              alt="Abstract dark-themed banner illustration showing AI and studying concepts with tan and teal glow accents."
+            />
           </figure>
 
           <div class="hero-actions">
@@ -118,7 +148,6 @@
         <p class="panel-subtitle">Newest posts go at the top.</p>
       </div>
 
-      <!-- REQUIRED STRUCTURE: ul.post-list -->
       <ul class="post-list">
         <li class="post-item drop reveal">
           <div class="float-inner">
@@ -129,15 +158,15 @@
 
         <li class="post-item drop reveal">
           <div class="float-inner">
-            <a href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
-            <span class="date">January 25, 2026</span>
+            <a href="ai-study-prompts.html">AI study prompts that actually work</a>
+            <span class="date">January 24, 2026</span>
           </div>
         </li>
 
         <li class="post-item drop reveal">
           <div class="float-inner">
-            <a href="ai-study-prompts.html">AI study prompts that actually work</a>
-            <span class="date">January 24, 2026</span>
+            <a href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
+            <span class="date">January 25, 2026</span>
           </div>
         </li>
       </ul>
@@ -146,6 +175,22 @@
     <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
   </main>
 
+  <!-- Primary JS (root) -->
   <script src="script.js"></script>
+
+  <!-- Fallback JS loader: if root JS missing, load /js/script.js -->
+  <script>
+    (function () {
+      // If your JS didn't attach (menu doesn't work), try fallback.
+      // We detect by checking a global flag that script.js sets.
+      setTimeout(() => {
+        if (!window.__DM_SITE_READY__) {
+          const s = document.createElement("script");
+          s.src = "js/script.js";
+          document.body.appendChild(s);
+        }
+      }, 700);
+    })();
+  </script>
 </body>
 </html>
