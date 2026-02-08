@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="How I use AI like a study tutor to learn faster, practice smarter, and stay consistent." />
+  <title>AI as a Study Tutor • AI Study + Productivity</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page">
+  <div class="progress" aria-hidden="true">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="warp-layer" id="warpLayer" aria-hidden="true">
+    <canvas class="warp-canvas" id="warpCanvas"></canvas>
+  </div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-top">
+      <div class="drawer-brand">
+        <div class="logo">AI</div>
+        <div>
+          <p class="drawer-title">Menu</p>
+          <p class="drawer-subtitle">AI Study + Productivity</p>
+        </div>
+      </div>
+      <button class="icon-btn" id="closeDrawer" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Site menu">
+      <a class="drawer-link" href="index.html">Home</a>
+      <a class="drawer-link" href="about.html">About</a>
+      <a class="drawer-link" href="index.html#posts">Posts</a>
+    </nav>
+
+    <div class="drawer-section">
+      <p class="drawer-section-title">Posts</p>
+      <a class="drawer-post" href="ai-as-a-study-tutor.html">AI as a Study Tutor</a>
+    </div>
+
+    <div class="drawer-footer">
+      <p class="muted">Dawson Myers • CAH 205</p>
+      <p class="muted">GitHub: dawsonmyers01</p>
+    </div>
+  </aside>
+
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="topbar drop reveal">
+      <button class="icon-btn" id="openDrawer" aria-label="Open menu">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+
+      <div class="brand">
+        <div class="logo">AI</div>
+        <div>
+          <h1 class="site-title">AI Study + Productivity</h1>
+          <p class="site-subtitle">CAH 205 newsletter • by Dawson Myers</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Top navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article">
+    <article class="article-card drop reveal">
+      <div class="float-inner">
+        <a class="back-link" href="index.html">← Back to posts</a>
+
+        <div class="article-head">
+          <h2 class="article-title">AI as a Study Tutor</h2>
+          <p class="date">February 7, 2026</p>
+        </div>
+
+        <p class="lead">
+          The best way I have found to use AI for studying is not asking it to summarize. The real value is using it
+          like a tutor that keeps pushing you until you actually understand. This is the workflow I use when I want
+          to learn something and not forget it a day later.
+        </p>
+
+        <h3>My rule for using AI when I study</h3>
+        <p>
+          If I am not answering questions, explaining ideas, or fixing mistakes, I am probably not learning much.
+          So I use AI to force me into active studying instead of passive reading.
+        </p>
+
+        <h3>Step 1: Warm up with fast questions</h3>
+        <p>
+          I start with quick questions to see what I know already. The goal is to find gaps early.
+        </p>
+        <p><strong>Prompt:</strong> <code>Quiz me on [topic]. Ask 8 questions one at a time. Wait for my answer each time. After I answer, tell me what I got right or wrong and why.</code></p>
+
+        <h3>Step 2: Make it harder on purpose</h3>
+        <p>
+          Once I get a few right, I tell the AI to raise the difficulty. This is where I actually improve.
+        </p>
+        <p><strong>Prompt:</strong> <code>Make the next questions harder. Add one real world scenario question and one trick question. Explain the reasoning after each answer.</code></p>
+
+        <h3>Step 3: Force me to explain, not just pick an answer</h3>
+        <p>
+          Multiple choice is fine, but explaining is better. If I cannot explain it, I do not really know it.
+        </p>
+        <p><strong>Prompt:</strong> <code>Ask me to explain the concept in my own words in 3 sentences. Then point out what is missing or incorrect and give me a better version.</code></p>
+
+        <h3>Step 4: Make a quick review plan so I do not cram</h3>
+        <p>
+          The last step is turning it into a short plan that I can actually follow this week.
+        </p>
+        <p><strong>Prompt:</strong> <code>Based on what I missed, make a 7 day review plan. Keep it 10 to 20 minutes a day. Include 3 short retrieval questions each day.</code></p>
+
+        <h3>Why this is also a productivity thing</h3>
+        <p>
+          This saves time because I stop wasting energy on stuff I already know. AI helps me aim my studying at what
+          I am weak at, and it keeps my plan simple so I do not overthink it.
+        </p>
+
+        <h3>What I am going to try next</h3>
+        <p>
+          Next week I want to test this workflow on a real class unit and track how many questions I can answer
+          correctly at the start versus the end. If it works, I will keep building a repeatable system for every class.
+        </p>
+      </div>
+    </article>
+
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
