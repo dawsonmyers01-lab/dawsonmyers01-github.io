@@ -175,12 +175,14 @@
   </main>
 
   <script src="script.js"></script>
+
+  <!-- FIXED FALLBACK: points to script.js in root (not js/script.js) -->
   <script>
     (function () {
       setTimeout(() => {
         if (!window.__DM_SITE_READY__) {
           const s = document.createElement("script");
-          s.src = "js/script.js";
+          s.src = "script.js";
           document.body.appendChild(s);
         }
       }, 700);
