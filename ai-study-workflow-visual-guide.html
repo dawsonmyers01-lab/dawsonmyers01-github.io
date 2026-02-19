@@ -77,39 +77,80 @@
         <p class="date">February 1, 2026</p>
 
         <p class="lead">
-          This is the workflow I use when I want to actually learn, not just “read and forget.”
-          The core idea is simple: ask questions, answer them, get feedback, and repeat over time.
-          The visuals below show how I set it up.
+          When people say “AI helped me study,” most of the time they mean “AI summarized something.”
+          Summaries feel productive, but they don’t always create real understanding.
+          This workflow is different: it uses AI like a tutor and forces you to practice, get feedback, and repeat.
         </p>
 
         <figure class="visual reveal">
           <img
             src="images/ai-study-banner.svg"
-            alt="Wide banner illustration with dark theme and tan and teal glow accents representing AI study and productivity."
+            alt="Abstract dark-themed banner illustration showing AI and studying concepts with tan and teal glow accents."
             loading="lazy"
           />
-          <figcaption>A simple visual identity for the newsletter: dark, clean, and study-focused.</figcaption>
+          <figcaption>
+            My study goal: less passive reading, more practice + feedback.
+          </figcaption>
         </figure>
 
-        <h3>1) The loop that makes you learn</h3>
+        <h3>What this workflow is trying to fix</h3>
         <p>
-          If AI is only summarizing, you are probably doing passive studying. I use AI as a tutor and force myself
-          into a loop: question, attempt, feedback, repeat. This is the part that actually builds understanding.
+          The biggest problem with studying is thinking “I get it” because you recognize the notes,
+          then bombing questions because you never practiced pulling the answer out of your own head.
+          This workflow is designed to make the hard part happen on purpose: retrieval.
+        </p>
+
+        <h3>Step 1: Turn the topic into questions (not notes)</h3>
+        <p>
+          First, I give AI my topic and ask it to act like a tutor. The key rule is that it must quiz me
+          <strong>one question at a time</strong> and wait for my answer before helping.
+        </p>
+
+        <p><strong>Prompt I use:</strong></p>
+        <p>
+          <code>
+            You are my tutor for [topic]. Ask me ONE question at a time. Wait for my answer.
+            After I answer, grade it (0-2 points), explain what I missed, then ask a harder follow-up.
+            Keep going for 10 questions. No long lectures.
+          </code>
+        </p>
+
+        <h3>Step 2: The retrieval practice loop</h3>
+        <p>
+          This is the part that actually changes your brain. You attempt the answer first,
+          then the feedback repairs the gaps. AI is perfect for this because it can instantly adapt difficulty.
         </p>
 
         <figure class="visual reveal">
           <img
             src="images/retrieval-practice-loop.svg"
-            alt="Diagram style illustration of a retrieval practice loop: question, attempt, feedback, repeat."
+            alt="Diagram showing a retrieval practice loop: question, attempt, feedback, repeat."
             loading="lazy"
           />
-          <figcaption>Retrieval practice loop: answer first, then learn from feedback.</figcaption>
+          <figcaption>
+            The loop: attempt first → feedback second → repeat. That order matters.
+          </figcaption>
         </figure>
 
-        <h3>2) Spacing beats cramming</h3>
+        <h3>Step 3: Build a “weakness list” from your misses</h3>
         <p>
-          Even short review sessions spread across the week beat one giant cram session. I use AI to generate
-          small daily review blocks so I stay consistent without burning out.
+          After the quiz, I ask AI to summarize my weak spots as a short checklist.
+          That way my next study session has a target instead of me re-reading everything.
+        </p>
+
+        <p><strong>Prompt I use:</strong></p>
+        <p>
+          <code>
+            Based on the questions we just did, list my top 5 weak areas.
+            For each one, give me: (1) what I got wrong, (2) the correct idea in one sentence,
+            and (3) a mini question to test it again tomorrow.
+          </code>
+        </p>
+
+        <h3>Step 4: Spaced review plan (10–20 minutes a day)</h3>
+        <p>
+          If I only do one session, I forget. The fix is small review sessions spread across the week.
+          I use AI to build a schedule that re-tests my weak areas multiple times without making me do a full re-study.
         </p>
 
         <figure class="visual reveal">
@@ -118,20 +159,32 @@
             alt="Calendar style illustration showing spaced review sessions across a week."
             loading="lazy"
           />
-          <figcaption>Spaced review plan: 10 to 20 minutes a day is enough if it is consistent.</figcaption>
+          <figcaption>
+            Spaced review: small sessions, repeated over time, focused on weak spots.
+          </figcaption>
         </figure>
 
-        <h3>Quick prompt you can steal</h3>
+        <p><strong>Prompt I use:</strong></p>
         <p>
-          Here is the prompt that drives the whole system:
-        </p>
-        <p>
-          <strong>Prompt:</strong>
-          <code>Quiz me on [topic]. Ask one question at a time. Wait for my answer. Then tell me what I missed and ask a harder follow-up. After 10 questions, build a 7-day review plan based on my weak spots.</code>
+          <code>
+            Make a 7-day spaced review plan for my weak areas.
+            Keep it to 10–20 minutes per day.
+            Each day should include 3 questions and 1 quick explanation.
+            Day 1 should be easiest, Day 7 should be hardest.
+          </code>
         </p>
 
+        <h3>What makes this “AI-powered” instead of just normal studying</h3>
         <p>
-          Next week I want to test this workflow on a full unit and track whether my quiz scores improve with less study time.
+          The advantage isn’t that AI gives answers. It’s that AI creates <strong>adaptive practice</strong>.
+          It can generate unlimited questions, grade your attempts, and keep your review focused.
+          That makes studying feel less random and way more efficient.
+        </p>
+
+        <h3>Mini challenge (what I’m doing next)</h3>
+        <p>
+          For my next unit, I’m going to use this workflow for one week straight and compare:
+          how confident I feel, how many practice questions I did, and how I perform on the next quiz.
         </p>
       </div>
     </article>
