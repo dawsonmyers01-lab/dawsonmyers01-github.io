@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Study prompts that help you learn and remember, not just skim summaries." />
+  <meta name="description" content="AI study prompts that actually work for learning and productivity." />
   <title>AI study prompts that actually work • AI Study + Productivity</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -13,14 +13,7 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="warp-layer" id="warpLayer" aria-hidden="true">
-    <canvas class="warp-canvas" id="warpCanvas"></canvas>
-  </div>
-
-  <div class="bubbles" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
 
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-top">
@@ -42,9 +35,10 @@
 
     <div class="drawer-section">
       <p class="drawer-section-title">Posts</p>
+      <a class="drawer-post" href="ai-as-a-study-tutor.html">AI as a Study Tutor</a>
       <a class="drawer-post" href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
-      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
       <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
+      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
     </div>
 
     <div class="drawer-footer">
@@ -53,10 +47,8 @@
     </div>
   </aside>
 
-  <div class="scrim" id="scrim" aria-hidden="true"></div>
-
   <header class="site-header">
-    <div class="topbar drop reveal">
+    <div class="topbar reveal">
       <button class="icon-btn" id="openDrawer" aria-label="Open menu">
         <span class="burger" aria-hidden="true"></span>
       </button>
@@ -77,39 +69,44 @@
   </header>
 
   <main class="article">
-    <article class="article-card drop reveal">
+    <article class="article-card reveal">
       <div class="float-inner">
         <a class="back-link" href="index.html">← Back to posts</a>
 
-        <div class="article-head">
-          <h2 class="article-title">AI study prompts that actually work</h2>
-          <p class="date">January 24, 2026</p>
-        </div>
+        <h2 class="article-title">AI study prompts that actually work</h2>
+        <p class="date">January 24, 2026</p>
 
         <p class="lead">
-          The biggest upgrade I made is switching from “summarize this” to prompts that force me to think.
-          These are built to create practice, feedback, and momentum.
+          The difference between “AI that helps” and “AI that wastes your time” is the prompt.
+          These are prompts I actually use when I want better grades and better focus, not just a summary.
         </p>
 
+        <figure class="visual reveal">
+          <img
+            src="images/retrieval-practice-loop.svg"
+            alt="Diagram showing a retrieval practice loop: question, attempt, feedback, repeat."
+            loading="lazy"
+          />
+          <figcaption>This is the vibe: answer first, then learn.</figcaption>
+        </figure>
+
         <h3>1) Tutor mode</h3>
-        <p class="muted">AI asks one question at a time, waits for my answer, then explains.</p>
-        <p><code>Quiz me on [topic]. Ask 8 questions one at a time. After each answer, explain what I got right/wrong and why.</code></p>
+        <p><strong>Prompt:</strong> <code>Act like a tutor. Ask me one question at a time about [topic]. Wait for my answer. Then correct me and ask a harder follow-up.</code></p>
 
-        <h3>2) Make it harder</h3>
-        <p class="muted">If the questions stay easy, I do not improve. I ask for harder versions and scenarios.</p>
-        <p><code>Make the next question harder. Add a real-world scenario. Then explain the best reasoning path, not just the answer.</code></p>
+        <h3>2) Explain it like I’m teaching</h3>
+        <p><strong>Prompt:</strong> <code>Make me explain this concept in 3 sentences. Then tell me what I missed and rewrite my explanation in a stronger version.</code></p>
 
-        <h3>3) Diagnose weak spots</h3>
-        <p class="muted">This turns vague studying into targeted review.</p>
-        <p><code>Based on my answers, list my top 3 weak spots. Give me a 10–15 minute plan and 6 questions focused only on those.</code></p>
+        <h3>3) Practice test builder</h3>
+        <p><strong>Prompt:</strong> <code>Create a 10-question mini test on [topic]. Mix conceptual and scenario questions. Give an answer key with reasoning.</code></p>
 
-        <h3>4) Turn notes into practice sets</h3>
-        <p class="muted">This builds flashcards and short quizzes without me spending forever formatting.</p>
-        <p><code>Turn these notes into: 10 flashcards, 6 short-answer questions, and 6 multiple-choice questions. Include an answer key.</code></p>
+        <h3>4) “No fluff” notes</h3>
+        <p><strong>Prompt:</strong> <code>Turn my notes into a cheat sheet. Only include what I would actually need on a test. Use bullet points and examples.</code></p>
 
-        <h3>One rule I follow</h3>
+        <h3>5) Productivity breakdown</h3>
+        <p><strong>Prompt:</strong> <code>Break this assignment into steps I can finish in 30-minute blocks. Put it into a 5-day plan with checkpoints.</code></p>
+
         <p>
-          I do not ask AI to do the learning for me. I ask it to create practice and feedback so I do the learning.
+          If I had to pick one thing that changed my studying the most, it is using AI for question-based learning instead of summaries.
         </p>
       </div>
     </article>
