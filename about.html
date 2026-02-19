@@ -34,11 +34,6 @@
     <canvas class="warp-canvas" id="warpCanvas"></canvas>
   </div>
 
-  <div class="bubbles" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
-
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-top">
       <div class="drawer-brand">
@@ -59,6 +54,7 @@
 
     <div class="drawer-section">
       <p class="drawer-section-title">Posts</p>
+      <a class="drawer-post" href="ai-as-a-study-tutor.html">AI as a Study Tutor</a>
       <a class="drawer-post" href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
       <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
       <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
@@ -100,19 +96,19 @@
 
         <h2 class="article-title">About this newsletter</h2>
         <p class="lead">
-          This is my CAH 205 newsletter focused on applied AI: how to study better and how to be more productive
-          with simple, repeatable workflows I can actually use every week.
+          This is my CAH 205 newsletter focused on applied AI for studying and real-world productivity.
+          I’m not trying to hype AI up. I’m trying to use it in ways that actually make school easier and help me get more done.
         </p>
 
         <div class="split">
           <div class="card mini drop reveal">
             <div class="float-inner">
-              <h3 class="card-title">What I post</h3>
+              <h3 class="card-title">What you’ll find here</h3>
               <ul class="list list-fancy">
-                <li>Research-backed study prompts</li>
-                <li>AI tutoring workflows (questions + feedback)</li>
-                <li>Short productivity systems (planning + time blocks)</li>
-                <li>What worked, what did not, and what changed</li>
+                <li>Study prompts that feel like tutoring, not summaries</li>
+                <li>Practice-question workflows for tests and quizzes</li>
+                <li>Simple planning systems for weekly productivity</li>
+                <li>What worked for me, what didn’t, and how I fixed it</li>
               </ul>
             </div>
           </div>
@@ -122,8 +118,12 @@
               <h3 class="card-title">About me</h3>
               <p><strong>Dawson Myers</strong></p>
               <p class="muted">
-                Placeholder bio (edit later): I am a college student exploring how AI can support learning,
-                planning, and real-world productivity. I like tools that feel simple, fast, and useful.
+                I’m a college student who likes figuring out shortcuts that actually work. My goal with this newsletter is to
+                build repeatable systems: ways to study that stick, and ways to plan that keep me consistent.
+                I’m especially interested in using AI like a tutor for learning (questions, feedback, explanations) and like a planner for productivity (breaking big assignments into steps and scheduling review so I don’t cram).
+              </p>
+              <p class="muted">
+                If something feels complicated or “too extra,” I don’t use it. I’m all about simple workflows that feel clean, fast, and real.
               </p>
             </div>
           </div>
@@ -140,7 +140,7 @@
       setTimeout(() => {
         if (!window.__DM_SITE_READY__) {
           const s = document.createElement("script");
-          s.src = "js/script.js";
+          s.src = "script.js";
           document.body.appendChild(s);
         }
       }, 700);
