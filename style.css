@@ -795,3 +795,41 @@ code{
 .hero-figure.compact figcaption{
   display: none;
 }
+/* ================================
+   VISIBILITY FAILSAFE (IMPORTANT)
+   Fixes blank screen when animations/JS don't run
+   Paste at VERY BOTTOM of style.css
+================================ */
+
+/* Always show the page by default */
+.page{
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Always show reveal elements by default (so the site never goes "blank") */
+.reveal,
+.drop,
+.hero-card,
+.card,
+.panel,
+.post-item,
+.article-card,
+.topbar{
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* If user allows motion, you can still animate */
+@media (prefers-reduced-motion: no-preference){
+  /* Let your existing animation system take over if you have it */
+  /* (No extra rules needed here unless you want) */
+}
+
+/* If user prefers reduced motion, force visible (accessibility fix) */
+@media (prefers-reduced-motion: reduce){
+  .page{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
