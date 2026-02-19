@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="A deep-dive on why retrieval practice beats AI summaries and how to build an AI-powered study system around it." />
+  <title>AI as a Cognitive Amplifier • AI Study + Productivity</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page">
+  <div class="progress" aria-hidden="true">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-top">
+      <div class="drawer-brand">
+        <div class="logo">AI</div>
+        <div>
+          <p class="drawer-title">Menu</p>
+          <p class="drawer-subtitle">AI Study + Productivity</p>
+        </div>
+      </div>
+      <button class="icon-btn" id="closeDrawer" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Site menu">
+      <a class="drawer-link" href="index.html">Home</a>
+      <a class="drawer-link" href="about.html">About</a>
+      <a class="drawer-link" href="index.html#posts">Posts</a>
+    </nav>
+
+    <div class="drawer-section">
+      <p class="drawer-section-title">Posts</p>
+      <a class="drawer-post" href="ai-cognitive-amplifier-deep-dive.html">AI as a Cognitive Amplifier</a>
+      <a class="drawer-post" href="ai-as-a-study-tutor.html">AI as a Study Tutor</a>
+      <a class="drawer-post" href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
+      <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
+      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
+    </div>
+
+    <div class="drawer-footer">
+      <p class="muted">Dawson Myers • CAH 205</p>
+      <p class="muted">GitHub: dawsonmyers01</p>
+    </div>
+  </aside>
+
+  <header class="site-header">
+    <div class="topbar reveal">
+      <button class="icon-btn" id="openDrawer" aria-label="Open menu">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+
+      <div class="brand">
+        <div class="logo">AI</div>
+        <div>
+          <h1 class="site-title">AI Study + Productivity</h1>
+          <p class="site-subtitle">CAH 205 newsletter • by Dawson Myers • GitHub: dawsonmyers01</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Top navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article">
+    <article class="article-card reveal">
+      <div class="float-inner">
+        <a class="back-link" href="index.html">← Back to posts</a>
+
+        <h2 class="article-title">AI as a Cognitive Amplifier: Why Retrieval Practice Beats Summaries</h2>
+        <p class="date">February 10, 2026</p>
+
+        <p class="lead">
+          For the first few weeks of using AI to study, I thought I was doing everything right. I was generating
+          summaries, cleaning up notes, and getting clear explanations. The problem is my quiz scores did not
+          improve the way I expected. That forced me to switch from “AI explains to me” to “AI forces me to think.”
+        </p>
+
+        <figure class="visual reveal">
+          <img
+            src="images/ai-study-banner.svg"
+            alt="Abstract dark-themed banner illustration showing AI and studying concepts with tan and teal glow accents."
+            loading="lazy"
+          />
+          <figcaption>
+            AI is best when it pushes your thinking instead of replacing it.
+          </figcaption>
+        </figure>
+
+        <h3>The problem with AI summaries</h3>
+        <p>
+          Summaries feel productive because they make the material seem clear. But “it looks familiar” is not the
+          same thing as “I can answer questions about it.” When AI does all the explaining, it can accidentally
+          turn studying into passive reading.
+        </p>
+
+        <p>
+          The hardest part of learning is pulling an answer out of your head under pressure. That is why
+          retrieval practice is so powerful: it trains recall, not recognition.
+        </p>
+
+        <h3>What retrieval practice actually is</h3>
+        <p>
+          Retrieval practice means attempting to remember information before looking at the answer. The key is
+          the order: attempt first, feedback second. That “struggle” is not a bug. It is the learning.
+        </p>
+
+        <figure class="visual reveal">
+          <img
+            src="images/retrieval-practice-loop.svg"
+            alt="Diagram showing a retrieval practice loop: question, attempt, feedback, repeat."
+            loading="lazy"
+          />
+          <figcaption>
+            Attempt → feedback → repeat. This loop is the difference between learning and just reading.
+          </figcaption>
+        </figure>
+
+        <h3>Passive AI vs structured AI</h3>
+        <p>
+          Here is the difference I noticed after testing both approaches.
+        </p>
+
+        <p>
+          <strong>Passive AI:</strong> “Summarize Chapter 5.” It looks great, it feels easy, and I feel confident.
+          But the confidence is often fake because I did not practice answering anything.
+        </p>
+
+        <p>
+          <strong>Structured AI:</strong> “Quiz me one question at a time, wait for my answer, then grade it and ask a harder follow-up.”
+          This feels slower and harder, but my weak spots become obvious fast, and the learning sticks.
+        </p>
+
+        <h3>Where spaced repetition fits</h3>
+        <p>
+          Even good retrieval practice can fade if you only do it once. Spaced repetition is the missing piece:
+          small review sessions spread across the week instead of one long cram session. AI makes this easy
+          because it can generate a plan that targets only what you missed.
+        </p>
+
+        <figure class="visual reveal">
+          <img
+            src="images/spaced-review-calendar.svg"
+            alt="Calendar style illustration representing spaced review sessions across a week."
+            loading="lazy"
+          />
+          <figcaption>
+            Spaced review: short sessions, repeated over time, focused on weak areas.
+          </figcaption>
+        </figure>
+
+        <h3>The system I actually use</h3>
+        <p>
+          This is the workflow I keep coming back to because it is simple and it works.
+        </p>
+
+        <ul class="list list-fancy">
+          <li><strong>Quiz:</strong> AI asks 10 questions one at a time, adapting difficulty.</li>
+          <li><strong>Feedback:</strong> I answer first, then AI explains what I missed.</li>
+          <li><strong>Weakness list:</strong> AI gives my top weak areas in plain language.</li>
+          <li><strong>Spaced plan:</strong> AI creates 5–7 days of mini review sets.</li>
+          <li><strong>Retest:</strong> End-of-week test that mixes easy + hard questions.</li>
+        </ul>
+
+        <h3>Prompts you can copy</h3>
+
+        <p><strong>1) Tutor quiz prompt</strong></p>
+        <p>
+          <code>
+            You are my tutor for [topic]. Ask ONE question at a time. Wait for my answer.
+            After I answer, grade it (0-2 points), explain what I missed, then ask a harder follow-up.
+            Do 10 questions total. No long lectures.
+          </code>
+        </p>
+
+        <p><strong>2) Weakness list prompt</strong></p>
+        <p>
+          <code>
+            Based on my answers, list my top 5 weak areas.
+            For each one: (1) what I got wrong, (2) the correct idea in one sentence,
+            (3) one new practice question for tomorrow.
+          </code>
+        </p>
+
+        <p><strong>3) Spaced review plan prompt</strong></p>
+        <p>
+          <code>
+            Make a 7-day review plan for my weak areas. Keep it 10–20 minutes per day.
+            Each day should include 3 questions and 1 short explanation.
+            Increase difficulty gradually from Day 1 to Day 7.
+          </code>
+        </p>
+
+        <h3>My conclusion</h3>
+        <p>
+          After five weeks of building and testing this newsletter, the biggest thing I learned is that AI is not
+          a shortcut to learning. It is a multiplier. If you use it passively, it multiplies comfort. If you use it
+          to force retrieval, it multiplies real learning.
+        </p>
+
+        <p>
+          The difference is structure. AI can generate anything, but you have to make it generate the things
+          that actually train your brain.
+        </p>
+
+      </div>
+    </article>
+
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
