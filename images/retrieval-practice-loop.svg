@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-label="Concept diagram showing a retrieval practice loop: question, attempt, feedback, repeat">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="15%" r="80%">
+      <stop offset="0" stop-color="#d1b38b" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#0b0c0e" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="bg2" cx="80%" cy="25%" r="80%">
+      <stop offset="0" stop-color="#39d6c7" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0b0c0e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d1b38b" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#39d6c7" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="900" fill="#0b0c0e"/>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <rect width="1400" height="900" fill="url(#bg2)"/>
+
+  <!-- loop ring -->
+  <g opacity="0.95">
+    <circle cx="700" cy="450" r="260" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)" stroke-width="2"/>
+    <circle cx="700" cy="450" r="305" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+  </g>
+
+  <!-- arrows -->
+  <g fill="none" stroke="url(#glow)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.65">
+    <path d="M520 290 C620 220 780 220 880 290"/>
+    <path d="M930 360 C1000 460 980 600 880 660"/>
+    <path d="M520 610 C420 540 400 420 470 340"/>
+  </g>
+
+  <!-- arrowheads -->
+  <g fill="url(#glow)" opacity="0.75">
+    <path d="M880 290 l-30 -10 l14 28 z"/>
+    <path d="M880 660 l-12 30 l28 -14 z"/>
+    <path d="M470 340 l-30 12 l14 -28 z"/>
+  </g>
+
+  <!-- nodes -->
+  <g filter="url(#soft)">
+    <!-- Question -->
+    <rect x="590" y="180" width="220" height="140" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+    <circle cx="630" cy="250" r="26" fill="rgba(209,179,139,0.18)" stroke="rgba(209,179,139,0.75)" stroke-width="2"/>
+    <text x="630" y="258" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="28" fill="#d1b38b">?</text>
+    <text x="710" y="250" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="20" fill="rgba(255,255,255,0.85)">Question</text>
+
+    <!-- Attempt -->
+    <rect x="920" y="380" width="240" height="150" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+    <path d="M980 460 q40 -60 80 0 q-40 60 -80 0 z" fill="rgba(57,214,199,0.16)" stroke="rgba(57,214,199,0.80)" stroke-width="2"/>
+    <text x="1040" y="455" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="20" fill="rgba(255,255,255,0.85)">Attempt</text>
+
+    <!-- Feedback -->
+    <rect x="540" y="600" width="260" height="150" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+    <circle cx="610" cy="675" r="20" fill="rgba(57,214,199,0.16)" stroke="rgba(57,214,199,0.85)" stroke-width="2"/>
+    <path d="M602 675 l8 8 l16 -18" stroke="#39d6c7" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="695" y="680" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="20" fill="rgba(255,255,255,0.85)">Feedback</text>
+
+    <!-- Repeat -->
+    <rect x="240" y="380" width="250" height="150" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+    <path d="M300 470 a28 28 0 1 0 56 0" stroke="rgba(209,179,139,0.9)" stroke-width="3" fill="none"/>
+    <path d="M356 470 l-10 -10 l2 16 z" fill="#d1b38b" opacity="0.9"/>
+    <text x="370" y="455" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="20" fill="rgba(255,255,255,0.85)">Repeat</text>
+  </g>
+
+  <!-- center label -->
+  <g opacity="0.9">
+    <text x="700" y="460" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="28" fill="rgba(255,255,255,0.90)">Retrieval practice loop</text>
+    <text x="700" y="492" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="16" fill="rgba(185,191,202,0.95)">Ask → answer → feedback → harder questions → repeat</text>
+  </g>
+</svg>
