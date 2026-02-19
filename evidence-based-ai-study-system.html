@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Evidence-based AI study system built around retrieval practice and spaced review." />
+  <meta name="description" content="A simple evidence-based system for using AI to study and remember information." />
   <title>Evidence-Based AI Study System • AI Study + Productivity</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -13,14 +13,7 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="warp-layer" id="warpLayer" aria-hidden="true">
-    <canvas class="warp-canvas" id="warpCanvas"></canvas>
-  </div>
-
-  <div class="bubbles" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
 
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-top">
@@ -42,9 +35,10 @@
 
     <div class="drawer-section">
       <p class="drawer-section-title">Posts</p>
+      <a class="drawer-post" href="ai-as-a-study-tutor.html">AI as a Study Tutor</a>
       <a class="drawer-post" href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
-      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
       <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
+      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
     </div>
 
     <div class="drawer-footer">
@@ -53,10 +47,8 @@
     </div>
   </aside>
 
-  <div class="scrim" id="scrim" aria-hidden="true"></div>
-
   <header class="site-header">
-    <div class="topbar drop reveal">
+    <div class="topbar reveal">
       <button class="icon-btn" id="openDrawer" aria-label="Open menu">
         <span class="burger" aria-hidden="true"></span>
       </button>
@@ -77,59 +69,48 @@
   </header>
 
   <main class="article">
-    <article class="article-card drop reveal">
+    <article class="article-card reveal">
       <div class="float-inner">
         <a class="back-link" href="index.html">← Back to posts</a>
 
-        <div class="article-head">
-          <h2 class="article-title">Evidence-Based AI Study System</h2>
-          <p class="date">January 25, 2026</p>
-        </div>
+        <h2 class="article-title">Evidence-Based AI Study System</h2>
+        <p class="date">January 25, 2026</p>
 
         <p class="lead">
-          AI can be useful for studying, but only if it pushes real learning. This post is my basic system:
-          retrieval practice first, spaced review second, and productivity scaffolding so I actually follow through.
+          If I had to describe my AI study system in one sentence, it is this:
+          use AI to create practice, not just explanations.
         </p>
 
-        <h3>The two study strategies I trust the most</h3>
-        <ul class="list list-fancy">
-          <li><strong>Practice testing (retrieval practice)</strong>: recalling info from memory improves long-term retention better than rereading.</li>
-          <li><strong>Spaced practice</strong>: spreading practice across time improves retention compared to massed practice (cramming).</li>
-        </ul>
+        <figure class="visual reveal">
+          <img
+            src="images/spaced-review-calendar.svg"
+            alt="Calendar style illustration representing spaced review sessions across a week."
+            loading="lazy"
+          />
+          <figcaption>Consistency wins. Small review sessions beat cramming.</figcaption>
+        </figure>
 
-        <h3>How I use AI without turning my brain off</h3>
-        <div class="callouts">
-          <div class="callout drop reveal">
-            <div class="float-inner">
-              <h4>Step 1: Tutor loop</h4>
-              <p class="muted">I answer first. AI corrects second.</p>
-              <p><code>Quiz me on [topic]. Ask 10 questions one at a time. After each answer, tell me what I got right/wrong and why. Increase difficulty if I do well.</code></p>
-            </div>
-          </div>
+        <h3>The 3-part system</h3>
+        <p>
+          First, I use AI to generate questions that match what I am learning. Second, I answer without looking.
+          Third, I use AI feedback to fix mistakes and create a short review plan for the next few days.
+        </p>
 
-          <div class="callout drop reveal">
-            <div class="float-inner">
-              <h4>Step 2: Target weak spots</h4>
-              <p class="muted">No “review everything.” Only what I missed.</p>
-              <p><code>Based on my answers, list my top 3 weak spots and give me a 15-minute review plan plus 6 focused questions.</code></p>
-            </div>
-          </div>
+        <h3>Why it works</h3>
+        <p>
+          The system forces active recall and spaced repetition. Even if I only do 15 minutes,
+          it is better than reading the same notes over and over.
+        </p>
 
-          <div class="callout drop reveal">
-            <div class="float-inner">
-              <h4>Step 3: Spaced plan</h4>
-              <p class="muted">Short sessions across the week.</p>
-              <p><code>Create a spaced review schedule for the next 10 days (10–20 minutes/day). Tell me exactly what to review each day and include 3 retrieval questions daily.</code></p>
-            </div>
-          </div>
-        </div>
+        <h3>My go-to prompt</h3>
+        <p>
+          <strong>Prompt:</strong>
+          <code>Turn this topic into 12 practice questions. Ask them one at a time. After I answer, explain the correct reasoning and track what I miss. Then build a 7-day review plan focused only on my weak areas.</code>
+        </p>
 
-        <h3>References</h3>
-        <ul class="list">
-          <li><a href="https://www.psychologicalscience.org/publications/journals/pspi/learning-techniques.html">Dunlosky et al. (2013) — high-utility learning techniques</a></li>
-          <li><a href="https://learninglab.psych.purdue.edu/downloads/2006/2006_Roediger_Karpicke_PsychSci.pdf">Roediger &amp; Karpicke (2006) — testing effect</a></li>
-          <li><a href="https://augmentingcognition.com/assets/Cepeda2006.pdf">Cepeda et al. (2006) — distributed practice meta-analysis</a></li>
-        </ul>
+        <p>
+          This keeps studying simple: I always know what to do next, and I can keep it consistent without burning out.
+        </p>
       </div>
     </article>
 
