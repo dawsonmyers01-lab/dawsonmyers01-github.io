@@ -1,5 +1,9 @@
 (function () {
+  // Signal that JS loaded
   window.__DM_SITE_READY__ = true;
+
+  // Safety: only enable reveal-hiding when JS is present
+  document.body.classList.add("has-js");
 
   const qs = (s) => document.querySelector(s);
   const qsa = (s) => Array.from(document.querySelectorAll(s));
@@ -12,17 +16,15 @@
   const progressBar = qs("#progressBar");
   const toTop = qs("#toTop");
 
-  const warpLayer = qs("#warpLayer");
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Drawer controls
+  // Drawer
   const openDrawer = () => {
     if (!drawer || !scrim) return;
     drawer.classList.add("on");
     scrim.classList.add("on");
     drawer.setAttribute("aria-hidden", "false");
   };
-
   const closeDrawer = () => {
     if (!drawer || !scrim) return;
     drawer.classList.remove("on");
@@ -38,16 +40,9 @@
     if (e.key === "Escape") closeDrawer();
   });
 
-  // Assign ragdoll order
-  const drops = qsa(".drop");
-  drops.forEach((el, i) => el.style.setProperty("--i", i));
-
-  // Reveal on scroll + trigger drop-in
+  // Reveal on scroll
   const revealEls = qsa(".reveal");
-  const makeVisible = (el) => {
-    el.classList.add("in");
-    if (el.classList.contains("drop")) el.classList.add("in");
-  };
+  const makeVisible = (el) => el.classList.add("in");
 
   if (prefersReduced) {
     revealEls.forEach(makeVisible);
@@ -61,75 +56,12 @@
           }
         });
       },
-      { threshold: 0.16 }
+      { threshold: 0.15 }
     );
     revealEls.forEach((el) => io.observe(el));
   }
 
-  // Smooth anchor scrolling
-  const smoothScrollTo = (hash) => {
-    const el = document.querySelector(hash);
-    if (!el) return;
-    el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" });
-  };
-
-  // Slide + fade transition overlay
-  let transitioning = false;
-  const startTransition = (onDone) => {
-    if (prefersReduced || !warpLayer) {
-      onDone();
-      return;
-    }
-    if (transitioning) return;
-    transitioning = true;
-
-    document.body.classList.add("is-transitioning");
-
-    requestAnimationFrame(() => {
-      warpLayer.classList.add("on");
-      setTimeout(() => onDone(), 260);
-    });
-  };
-
-  window.addEventListener("pageshow", () => {
-    if (warpLayer) warpLayer.classList.remove("on");
-    document.body.classList.remove("is-transitioning");
-    transitioning = false;
-  });
-
-  // Click handling: anchors smooth scroll; internal links transition
-  const isInternal = (href) => {
-    if (!href) return false;
-    if (href.startsWith("http")) return false;
-    if (href.startsWith("mailto:")) return false;
-    return true;
-  };
-
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href");
-    if (!href) return;
-
-    if (a.classList.contains("drawer-link") || a.classList.contains("drawer-post")) {
-      closeDrawer();
-    }
-
-    if (href.startsWith("#")) {
-      e.preventDefault();
-      smoothScrollTo(href);
-      return;
-    }
-
-    if (isInternal(href)) {
-      if (a.target === "_blank" || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      e.preventDefault();
-      startTransition(() => (window.location.href = href));
-    }
-  });
-
-  // Scroll progress bar + to-top button
+  // Scroll progress + back to top
   const onScroll = () => {
     const doc = document.documentElement;
     const scrollTop = doc.scrollTop || document.body.scrollTop;
@@ -152,4 +84,11 @@
       window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
     });
   }
+
+  // Close drawer when clicking drawer links
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a) return;
+    if (a.classList.contains("drawer-link") || a.classList.contains("drawer-post")) closeDrawer();
+  });
 })();
