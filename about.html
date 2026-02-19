@@ -5,24 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="About Dawson Myers and this CAH 205 AI newsletter." />
   <title>About • AI Study + Productivity</title>
-
-  <link id="mainCss" rel="stylesheet" href="style.css" />
-  <script>
-    (function () {
-      const link = document.getElementById("mainCss");
-      function loadFallbackCss() {
-        const fallback = document.createElement("link");
-        fallback.rel = "stylesheet";
-        fallback.href = "css/style.css";
-        document.head.appendChild(fallback);
-      }
-      link.addEventListener("error", loadFallbackCss);
-      setTimeout(() => {
-        try { if (!document.styleSheets || document.styleSheets.length === 0) loadFallbackCss(); }
-        catch (e) { loadFallbackCss(); }
-      }, 500);
-    })();
-  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="page">
@@ -30,9 +13,7 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="warp-layer" id="warpLayer" aria-hidden="true">
-    <canvas class="warp-canvas" id="warpCanvas"></canvas>
-  </div>
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
 
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-top">
@@ -66,10 +47,8 @@
     </div>
   </aside>
 
-  <div class="scrim" id="scrim" aria-hidden="true"></div>
-
   <header class="site-header">
-    <div class="topbar drop reveal">
+    <div class="topbar reveal">
       <button class="icon-btn" id="openDrawer" aria-label="Open menu">
         <span class="burger" aria-hidden="true"></span>
       </button>
@@ -90,44 +69,30 @@
   </header>
 
   <main class="article">
-    <section class="article-card drop reveal">
+    <section class="article-card reveal">
       <div class="float-inner">
         <a class="back-link" href="index.html">← Back to posts</a>
 
-        <h2 class="article-title">About this newsletter</h2>
+        <h2 class="article-title">About</h2>
         <p class="lead">
-          This is my CAH 205 newsletter focused on applied AI for studying and real-world productivity.
-          I’m not trying to hype AI up. I’m trying to use it in ways that actually make school easier and help me get more done.
+          This is my CAH 205 newsletter about applied AI for studying and real-world productivity.
+          I am not trying to make AI sound magical. I am trying to use it in ways that actually help.
         </p>
 
-        <div class="split">
-          <div class="card mini drop reveal">
-            <div class="float-inner">
-              <h3 class="card-title">What you’ll find here</h3>
-              <ul class="list list-fancy">
-                <li>Study prompts that feel like tutoring, not summaries</li>
-                <li>Practice-question workflows for tests and quizzes</li>
-                <li>Simple planning systems for weekly productivity</li>
-                <li>What worked for me, what didn’t, and how I fixed it</li>
-              </ul>
-            </div>
-          </div>
+        <h3>Who I am</h3>
+        <p>
+          My name is Dawson Myers. I am a college student and I like building simple systems that make school less stressful.
+          I care about results more than hype, so I focus on AI workflows that are repeatable: tutoring-style questions,
+          feedback on my answers, and plans that keep me consistent without wasting time.
+        </p>
 
-          <div class="card mini glow drop reveal">
-            <div class="float-inner">
-              <h3 class="card-title">About me</h3>
-              <p><strong>Dawson Myers</strong></p>
-              <p class="muted">
-                I’m a college student who likes figuring out shortcuts that actually work. My goal with this newsletter is to
-                build repeatable systems: ways to study that stick, and ways to plan that keep me consistent.
-                I’m especially interested in using AI like a tutor for learning (questions, feedback, explanations) and like a planner for productivity (breaking big assignments into steps and scheduling review so I don’t cram).
-              </p>
-              <p class="muted">
-                If something feels complicated or “too extra,” I don’t use it. I’m all about simple workflows that feel clean, fast, and real.
-              </p>
-            </div>
-          </div>
-        </div>
+        <h3>What I post here</h3>
+        <ul class="list list-fancy">
+          <li>Prompts that turn AI into a tutor instead of a summary machine</li>
+          <li>Study workflows built around practice questions and explanations</li>
+          <li>Productivity setups that break big assignments into steps and schedules</li>
+          <li>What worked, what did not, and what I improved each week</li>
+        </ul>
       </div>
     </section>
 
@@ -135,16 +100,5 @@
   </main>
 
   <script src="script.js"></script>
-  <script>
-    (function () {
-      setTimeout(() => {
-        if (!window.__DM_SITE_READY__) {
-          const s = document.createElement("script");
-          s.src = "script.js";
-          document.body.appendChild(s);
-        }
-      }, 700);
-    })();
-  </script>
 </body>
 </html>
