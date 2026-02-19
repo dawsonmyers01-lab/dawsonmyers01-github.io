@@ -102,9 +102,12 @@
             and better results without making things complicated.
           </p>
 
+          <!-- Image with automatic fallback paths -->
           <figure class="visual hero-figure compact">
             <img
-              src="./images/ai-study-banner.png"
+              class="auto-img"
+              data-src="images/ai-study-banner.png"
+              src="images/ai-study-banner.png"
               alt="Abstract dark-themed banner illustration showing AI and studying concepts with tan and teal glow accents."
               loading="eager"
             />
@@ -176,7 +179,7 @@
 
   <script src="script.js"></script>
 
-  <!-- FIXED FALLBACK: points to script.js in root (not js/script.js) -->
+  <!-- FIXED fallback: root script.js (not js/script.js) -->
   <script>
     (function () {
       setTimeout(() => {
@@ -186,6 +189,49 @@
           document.body.appendChild(s);
         }
       }, 700);
+    })();
+  </script>
+
+  <!-- Image fallback helper: tries multiple correct paths for project sites -->
+  <script>
+    (function () {
+      const baseCandidates = [
+        "",                  // images/...
+        "./",                // ./images/...
+        "../",               // ../images/... (rare)
+        "/dawsonmyers01-github.io/" // project site root
+      ];
+
+      const extCandidates = [".png", ".webp", ".jpg", ".jpeg"];
+
+      function buildCandidates(original) {
+        // original like "images/ai-study-banner.png" or "images/ai-study-banner"
+        const hasExt = /\.[a-zA-Z0-9]+$/.test(original);
+        const core = hasExt ? original.replace(/\.[^.]+$/, "") : original;
+
+        const out = [];
+        for (const base of baseCandidates) {
+          for (const ext of extCandidates) {
+            out.push(base + core + ext);
+          }
+        }
+        // also include original exactly as-is
+        out.unshift(original);
+        return out;
+      }
+
+      function tryNext(img, list, i) {
+        if (i >= list.length) return;
+        img.src = list[i];
+        img.onerror = () => tryNext(img, list, i + 1);
+      }
+
+      document.querySelectorAll("img.auto-img").forEach((img) => {
+        const desired = img.getAttribute("data-src") || img.getAttribute("src");
+        const candidates = buildCandidates(desired);
+        // start over with the list so a wrong first path doesn’t get stuck
+        tryNext(img, candidates, 0);
+      });
     })();
   </script>
 </body>
