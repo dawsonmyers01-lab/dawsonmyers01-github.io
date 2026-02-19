@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="A visual AI study workflow using retrieval practice and spaced review, with AI-generated images." />
+  <meta name="description" content="A visual guide to an AI-powered study workflow built around practice and feedback." />
   <title>Visual Guide: AI Study Workflow • AI Study + Productivity</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -13,14 +13,7 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="warp-layer" id="warpLayer" aria-hidden="true">
-    <canvas class="warp-canvas" id="warpCanvas"></canvas>
-  </div>
-
-  <div class="bubbles" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
 
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-top">
@@ -42,9 +35,10 @@
 
     <div class="drawer-section">
       <p class="drawer-section-title">Posts</p>
+      <a class="drawer-post" href="ai-as-a-study-tutor.html">AI as a Study Tutor</a>
       <a class="drawer-post" href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
-      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
       <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
+      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
     </div>
 
     <div class="drawer-footer">
@@ -53,10 +47,8 @@
     </div>
   </aside>
 
-  <div class="scrim" id="scrim" aria-hidden="true"></div>
-
   <header class="site-header">
-    <div class="topbar drop reveal">
+    <div class="topbar reveal">
       <button class="icon-btn" id="openDrawer" aria-label="Open menu">
         <span class="burger" aria-hidden="true"></span>
       </button>
@@ -77,125 +69,9 @@
   </header>
 
   <main class="article">
-    <article class="article-card drop reveal">
+    <article class="article-card reveal">
       <div class="float-inner">
         <a class="back-link" href="index.html">← Back to posts</a>
 
-        <div class="article-head">
-          <h2 class="article-title">Visual Guide: AI Study Workflow</h2>
-          <p class="date">February 1, 2026</p>
-        </div>
-
-        <figure class="visual hero-figure">
-          <img
-            src="images/ai-study-banner.svg"
-            alt="Abstract dark themed banner for AI study and productivity with tan and teal accents."
-          />
-          <figcaption>AI-generated header image: a consistent visual identity for my newsletter.</figcaption>
-        </figure>
-
-        <p class="lead">
-          My newsletter is about applied AI for studying and real-world productivity. This week I wanted the site to look
-          noticeably better by adding AI-generated visuals that actually explain the workflow, not just decorate the page.
-        </p>
-
-        <h3>The main claim</h3>
-        <p>
-          If AI only summarizes, you can feel productive without learning much. What works better is using AI to force
-          <strong>retrieval practice</strong> (answering questions from memory) and then using AI to build a simple
-          <strong>spaced review plan</strong> (short sessions spread out over days).
-        </p>
-
-        <h3>Part 1: Retrieval practice loop (AI as tutor)</h3>
-        <figure class="visual">
-          <img
-            src="images/retrieval-practice-loop.svg"
-            alt="Concept diagram showing a retrieval practice loop: question, attempt, feedback, repeat."
-            loading="lazy"
-          />
-          <figcaption>This illustrates how I use AI like a tutor: question → attempt → feedback → repeat.</figcaption>
-        </figure>
-
-        <p>
-          The point of this loop is to expose weak spots fast. AI does not just “tell me the answer.”
-          It pushes me to attempt the answer first, then it corrects me and explains why.
-        </p>
-
-        <div class="callouts">
-          <div class="callout drop reveal">
-            <div class="float-inner">
-              <h4>Tutor mode prompt</h4>
-              <p class="muted">Use this after reading notes or watching a lecture.</p>
-              <p>
-                <code>Quiz me on [topic]. Ask 10 questions one at a time. After each answer, tell me what I got right or wrong and why. If I do well, increase difficulty.</code>
-              </p>
-            </div>
-          </div>
-
-          <div class="callout drop reveal">
-            <div class="float-inner">
-              <h4>Weak-spot diagnosis prompt</h4>
-              <p class="muted">Use this right after the quiz so the review is targeted.</p>
-              <p>
-                <code>Based on my answers, list my top 3 weak spots. Give me a 15-minute plan and 6 practice questions focused only on those weak spots.</code>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <h3>Part 2: Spaced review plan (AI as planner)</h3>
-        <figure class="visual">
-          <img
-            src="images/spaced-review-calendar.svg"
-            alt="Concept image of a spaced review calendar with highlighted short sessions in a dark theme."
-            loading="lazy"
-          />
-          <figcaption>Spacing turns “I will study later” into a real schedule you can follow.</figcaption>
-        </figure>
-
-        <p>
-          After the tutor loop, I ask AI to schedule review across the next week. I keep it short (10 to 20 minutes)
-          because that is realistic during a busy semester.
-        </p>
-
-        <div class="callouts">
-          <div class="callout drop reveal">
-            <div class="float-inner">
-              <h4>Spacing plan prompt</h4>
-              <p class="muted">Short, repeatable, and hard to skip.</p>
-              <p>
-                <code>Create a spaced review plan for the next 7 days (10–20 minutes/day). Tell me exactly what to review each day and include 3 retrieval questions daily.</code>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <h3>Iteration evidence (what I refined)</h3>
-        <p>
-          I did not keep the first image drafts. I refined the prompts to make the visuals match the site and stay readable:
-        </p>
-        <ul class="list list-fancy">
-          <li>Removed clutter so the images have more negative space</li>
-          <li>Kept a consistent palette (dark background with tan and teal accents)</li>
-          <li>Made each image “say something” (banner identity, loop explanation, spacing visualization)</li>
-        </ul>
-
-        <h3>Research backbone (why this workflow is not random)</h3>
-        <p class="muted">
-          These ideas are supported by learning science research: retrieval practice (the “testing effect”) and spaced practice
-          are among the strongest and most consistently supported study strategies.
-        </p>
-        <ul class="list">
-          <li><a href="https://www.psychologicalscience.org/publications/journals/pspi/learning-techniques.html">Dunlosky et al. (2013) — Improving Students' Learning With Effective Learning Techniques</a></li>
-          <li><a href="https://learninglab.psych.purdue.edu/downloads/2006/2006_Roediger_Karpicke_PsychSci.pdf">Roediger &amp; Karpicke (2006) — Test-enhanced learning (testing effect)</a></li>
-          <li><a href="https://augmentingcognition.com/assets/Cepeda2006.pdf">Cepeda et al. (2006) — Distributed practice meta-analysis</a></li>
-        </ul>
-      </div>
-    </article>
-
-    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+        <h2 class="article-title">Visual Guide: AI Study Workflow</h2>
+        <p class="date">February 1
