@@ -5,24 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="CAH 205 AI Newsletter by Dawson Myers — applied AI for studying and real-world productivity." />
   <title>AI Study + Productivity</title>
-
-  <link id="mainCss" rel="stylesheet" href="style.css" />
-  <script>
-    (function () {
-      const link = document.getElementById("mainCss");
-      function loadFallbackCss() {
-        const fallback = document.createElement("link");
-        fallback.rel = "stylesheet";
-        fallback.href = "css/style.css";
-        document.head.appendChild(fallback);
-      }
-      link.addEventListener("error", loadFallbackCss);
-      setTimeout(() => {
-        try { if (!document.styleSheets || document.styleSheets.length === 0) loadFallbackCss(); }
-        catch (e) { loadFallbackCss(); }
-      }, 500);
-    })();
-  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="page">
@@ -30,14 +13,7 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="warp-layer" id="warpLayer" aria-hidden="true">
-    <canvas class="warp-canvas" id="warpCanvas"></canvas>
-  </div>
-
-  <div class="bubbles" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
 
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-top">
@@ -71,10 +47,8 @@
     </div>
   </aside>
 
-  <div class="scrim" id="scrim" aria-hidden="true"></div>
-
   <header class="site-header">
-    <div class="topbar drop reveal">
+    <div class="topbar reveal">
       <button class="icon-btn" id="openDrawer" aria-label="Open menu">
         <span class="burger" aria-hidden="true"></span>
       </button>
@@ -94,7 +68,7 @@
     </div>
 
     <section class="hero">
-      <div class="hero-card drop reveal">
+      <div class="hero-card reveal">
         <div class="float-inner">
           <h2 class="hero-title">Practical AI you can actually use.</h2>
           <p class="hero-text">
@@ -102,11 +76,8 @@
             and better results without making things complicated.
           </p>
 
-          <!-- Image with automatic fallback paths -->
           <figure class="visual hero-figure compact">
             <img
-              class="auto-img"
-              data-src="images/ai-study-banner.png"
               src="images/ai-study-banner.png"
               alt="Abstract dark-themed banner illustration showing AI and studying concepts with tan and teal glow accents."
               loading="eager"
@@ -121,7 +92,7 @@
       </div>
 
       <div class="hero-side">
-        <div class="card drop reveal">
+        <div class="card reveal">
           <div class="float-inner">
             <h3 class="card-title">What this newsletter is about</h3>
             <ul class="list list-fancy">
@@ -137,35 +108,35 @@
   </header>
 
   <main class="main" id="main">
-    <section class="panel drop reveal" id="posts">
+    <section class="panel reveal" id="posts">
       <div class="panel-head">
         <h2 class="panel-title">Latest posts</h2>
         <p class="panel-subtitle">Newest posts go at the top.</p>
       </div>
 
       <ul class="post-list">
-        <li class="post-item drop reveal">
+        <li class="post-item reveal">
           <div class="float-inner">
             <a href="ai-as-a-study-tutor.html">AI as a Study Tutor</a>
             <span class="date">February 7, 2026</span>
           </div>
         </li>
 
-        <li class="post-item drop reveal">
+        <li class="post-item reveal">
           <div class="float-inner">
             <a href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
             <span class="date">February 1, 2026</span>
           </div>
         </li>
 
-        <li class="post-item drop reveal">
+        <li class="post-item reveal">
           <div class="float-inner">
             <a href="ai-study-prompts.html">AI study prompts that actually work</a>
             <span class="date">January 24, 2026</span>
           </div>
         </li>
 
-        <li class="post-item drop reveal">
+        <li class="post-item reveal">
           <div class="float-inner">
             <a href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
             <span class="date">January 25, 2026</span>
@@ -178,61 +149,5 @@
   </main>
 
   <script src="script.js"></script>
-
-  <!-- FIXED fallback: root script.js (not js/script.js) -->
-  <script>
-    (function () {
-      setTimeout(() => {
-        if (!window.__DM_SITE_READY__) {
-          const s = document.createElement("script");
-          s.src = "script.js";
-          document.body.appendChild(s);
-        }
-      }, 700);
-    })();
-  </script>
-
-  <!-- Image fallback helper: tries multiple correct paths for project sites -->
-  <script>
-    (function () {
-      const baseCandidates = [
-        "",                  // images/...
-        "./",                // ./images/...
-        "../",               // ../images/... (rare)
-        "/dawsonmyers01-github.io/" // project site root
-      ];
-
-      const extCandidates = [".png", ".webp", ".jpg", ".jpeg"];
-
-      function buildCandidates(original) {
-        // original like "images/ai-study-banner.png" or "images/ai-study-banner"
-        const hasExt = /\.[a-zA-Z0-9]+$/.test(original);
-        const core = hasExt ? original.replace(/\.[^.]+$/, "") : original;
-
-        const out = [];
-        for (const base of baseCandidates) {
-          for (const ext of extCandidates) {
-            out.push(base + core + ext);
-          }
-        }
-        // also include original exactly as-is
-        out.unshift(original);
-        return out;
-      }
-
-      function tryNext(img, list, i) {
-        if (i >= list.length) return;
-        img.src = list[i];
-        img.onerror = () => tryNext(img, list, i + 1);
-      }
-
-      document.querySelectorAll("img.auto-img").forEach((img) => {
-        const desired = img.getAttribute("data-src") || img.getAttribute("src");
-        const candidates = buildCandidates(desired);
-        // start over with the list so a wrong first path doesn’t get stuck
-        tryNext(img, candidates, 0);
-      });
-    })();
-  </script>
 </body>
 </html>
