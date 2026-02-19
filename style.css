@@ -30,7 +30,17 @@ body{
 }
 
 @media (prefers-reduced-motion: reduce){
-  *{ animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+  *{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+
+  /* Critical fix: do NOT leave the whole page invisible when animations are disabled */
+  .page{
+    opacity:1!important;
+    transform:none!important;
+  }
 }
 
 body.is-transitioning{
@@ -39,12 +49,16 @@ body.is-transitioning{
 
 /* Page enter */
 .page{
-  opacity:0;
-  transform: translateY(10px);
-  animation: pageIn 650ms var(--ease) forwards;
+  opacity:1;
+  transform:none;
 }
-@keyframes pageIn{
-  to{ opacity:1; transform:translateY(0); }
+
+@media (prefers-reduced-motion: no-preference){
+  .page{
+    opacity:0;
+    transform: translateY(10px);
+    animation: pageIn 650ms var(--ease) forwards;
+  }
 }
 
 /* Progress bar */
