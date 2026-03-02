@@ -3,56 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="CAH 205 AI Newsletter by Dawson Myers — applied AI for studying and real-world productivity." />
+  <meta name="description" content="AI Study + Productivity by Dawson Myers — applied AI systems for learning and focus." />
   <title>AI Study + Productivity</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="page">
+
   <div class="progress" aria-hidden="true">
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="scrim" id="scrim" aria-hidden="true"></div>
-
-  <aside class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer-top">
-      <div class="drawer-brand">
-        <div class="logo">AI</div>
-        <div>
-          <p class="drawer-title">Menu</p>
-          <p class="drawer-subtitle">AI Study + Productivity</p>
-        </div>
-      </div>
-      <button class="icon-btn" id="closeDrawer" aria-label="Close menu">✕</button>
-    </div>
-
-    <nav class="drawer-nav" aria-label="Site menu">
-      <a class="drawer-link" href="index.html">Home</a>
-      <a class="drawer-link" href="about.html">About</a>
-      <a class="drawer-link" href="#posts">Posts</a>
-    </nav>
-
-    <div class="drawer-section">
-      <p class="drawer-section-title">Posts</p>
-      <a class="drawer-post" href="ai-as-a-study-tutor.html">AI as a Study Tutor</a>
-      <a class="drawer-post" href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
-      <a class="drawer-post" href="ai-study-prompts.html">AI study prompts that actually work</a>
-      <a class="drawer-post" href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
-    </div>
-
-    <div class="drawer-footer">
-      <p class="muted">Dawson Myers • CAH 205</p>
-      <p class="muted">GitHub: dawsonmyers01</p>
-    </div>
-  </aside>
-
   <header class="site-header">
-    <div class="topbar reveal">
-      <button class="icon-btn" id="openDrawer" aria-label="Open menu">
-        <span class="burger" aria-hidden="true"></span>
-      </button>
-
+    <div class="topbar drop reveal">
       <div class="brand">
         <div class="logo">AI</div>
         <div>
@@ -61,97 +24,104 @@
         </div>
       </div>
 
-      <nav class="nav" aria-label="Top navigation">
+      <nav class="nav">
         <a class="nav-link active" href="index.html">Home</a>
         <a class="nav-link" href="about.html">About</a>
       </nav>
     </div>
-
-    <section class="hero">
-      <div class="hero-card reveal">
-        <div class="float-inner">
-          <h2 class="hero-title">Practical AI you can actually use.</h2>
-          <p class="hero-text">
-            Applied AI for studying and real-world productivity: better prompts, better workflows,
-            and better results without making things complicated.
-          </p>
-
-          <figure class="visual hero-figure compact">
-            <img
-              src="images/ai-study-banner.svg"
-              alt="Abstract dark-themed banner illustration showing AI and studying concepts with tan and teal glow accents."
-              loading="eager"
-            />
-          </figure>
-
-          <div class="hero-actions">
-            <a class="btn" href="#posts">Read posts</a>
-            <a class="btn ghost" href="about.html">About me</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-side">
-        <div class="card reveal">
-          <div class="float-inner">
-            <h3 class="card-title">What this newsletter is about</h3>
-            <ul class="list list-fancy">
-              <li>Study prompts that build real understanding</li>
-              <li>Practice-question workflows (not just summaries)</li>
-              <li>Planning systems that keep you consistent</li>
-              <li>Research-backed methods I actually use</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
   </header>
 
   <main class="main" id="main">
-    <section class="panel reveal" id="posts">
+
+    <section class="hero drop reveal">
+      <div class="float-inner">
+        <h2 class="hero-title">Practical AI you can actually use.</h2>
+        <p class="hero-text">
+          Applied AI for studying and real-world productivity: retrieval practice, spaced repetition,
+          accountability systems, and structured deep work.
+        </p>
+
+        <figure class="visual hero-figure compact">
+          <img
+            src="images/ai-study-banner.svg"
+            alt="AI study and productivity themed illustration"
+            loading="eager"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="panel drop reveal" id="posts">
       <div class="panel-head">
-        <h2 class="panel-title">Latest posts</h2>
-        <p class="panel-subtitle">Newest posts go at the top.</p>
+        <h2 class="panel-title">Latest Posts</h2>
+        <p class="panel-subtitle">Newest posts are at the top.</p>
       </div>
 
       <ul class="post-list">
-        <li class="post-item reveal">
-  <div class="float-inner">
-    <a href="ai-cognitive-amplifier-deep-dive.html">AI as a Cognitive Amplifier: Why Retrieval Practice Beats Summaries</a>
-    <span class="date">February 10, 2026</span>
-  </div>
-</li>
-        <li class="post-item reveal">
+
+        <!-- NEW PHASE 2 POSTS -->
+
+        <li class="post-item drop reveal">
           <div class="float-inner">
-            <a href="ai-as-a-study-tutor.html">AI as a Study Tutor</a>
-            <span class="date">February 7, 2026</span>
+            <a href="deep-work-with-ai.html">
+              AI for Deep Work and Focus Blocks
+            </a>
+            <span class="date">February 20, 2026</span>
           </div>
         </li>
 
-        <li class="post-item reveal">
+        <li class="post-item drop reveal">
           <div class="float-inner">
-            <a href="ai-study-workflow-visual-guide.html">Visual Guide: AI Study Workflow</a>
+            <a href="semester-ai-study-system.html">
+              Building a Semester-Long AI Study System
+            </a>
+            <span class="date">February 18, 2026</span>
+          </div>
+        </li>
+
+        <li class="post-item drop reveal">
+          <div class="float-inner">
+            <a href="ai-accountability-system.html">
+              Building an AI Accountability System
+            </a>
+            <span class="date">February 15, 2026</span>
+          </div>
+        </li>
+
+        <!-- EXISTING POSTS -->
+
+        <li class="post-item drop reveal">
+          <div class="float-inner">
+            <a href="ai-cognitive-amplifier-deep-dive.html">
+              AI as a Cognitive Amplifier: Why Retrieval Practice Beats Summaries
+            </a>
+            <span class="date">February 10, 2026</span>
+          </div>
+        </li>
+
+        <li class="post-item drop reveal">
+          <div class="float-inner">
+            <a href="ai-study-workflow-visual-guide.html">
+              Visual Guide: AI Study Workflow
+            </a>
             <span class="date">February 1, 2026</span>
           </div>
         </li>
 
-        <li class="post-item reveal">
+        <li class="post-item drop reveal">
           <div class="float-inner">
-            <a href="ai-study-prompts.html">AI study prompts that actually work</a>
+            <a href="ai-study-prompts.html">
+              AI Study Prompts That Actually Work
+            </a>
             <span class="date">January 24, 2026</span>
           </div>
         </li>
 
-        <li class="post-item reveal">
-          <div class="float-inner">
-            <a href="evidence-based-ai-study-system.html">Evidence-Based AI Study System</a>
-            <span class="date">January 25, 2026</span>
-          </div>
-        </li>
       </ul>
     </section>
 
     <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
   </main>
 
   <script src="script.js"></script>
